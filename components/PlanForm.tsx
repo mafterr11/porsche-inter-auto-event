@@ -38,25 +38,25 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
       >
         <ToggleGroup.Item
           value="Audi"
-          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/audi.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Volkswagen"
-          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/vw.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Skoda"
-          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/skoda.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Seat"
-          className="relative flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="relative flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image
             src="/seat.png"

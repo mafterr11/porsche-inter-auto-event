@@ -29,7 +29,7 @@ const LocationForm = ({ updateForm, selectedLocation }: stepProps) => {
       <div className="flex flex-col gap-3">
         {locations.map((location) => (
           <div
-            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border border-neutral-600 p-3 ${
+            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border-2 border-neutral-600 p-3 ${
               selectedLocation === location.id
                 ? "border-[#6185C1] bg-neutral-900"
                 : ""

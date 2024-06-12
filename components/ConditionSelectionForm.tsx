@@ -30,13 +30,13 @@ const ConditionSelectionForm = ({
       <div className="flex flex-col gap-3">
         <div className="flex gap-3">
           <button
-            className={`cursor-pointer rounded-md border p-3 ${selectedCondition === "Mașină nouă" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
+            className={`cursor-pointer rounded-md border-2 p-3 ${selectedCondition === "Mașină nouă" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
             onClick={() => setSelectedCondition("Mașină nouă")}
           >
             Nouă
           </button>
           <button
-            className={`cursor-pointer rounded-md border p-3 ${selectedCondition === "Mașină rulată" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
+            className={`cursor-pointer rounded-md border-2 p-3 ${selectedCondition === "Mașină rulată" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
             onClick={() => setSelectedCondition("Mașină rulată")}
           >
             Rulată

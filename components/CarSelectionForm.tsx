@@ -93,7 +93,7 @@ const CarSelectionForm = ({
           {models.map((model) => (
             <div
               key={model}
-              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border p-3 ${selectedModel === model ? "border-[#805239] bg-neutral-900" : "border-neutral-600 hover:border-[#805239]"}`}
+              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 ${selectedModel === model ? "border-[#805239] bg-neutral-900" : "border-neutral-600 hover:border-[#805239]"}`}
               onClick={() => handleModelChange(model)}
             >
               <img

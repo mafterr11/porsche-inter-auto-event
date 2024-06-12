@@ -12,6 +12,9 @@ import FinalStep from "@/components/FinalStep";
 import SuccessMessage from "@/components/SuccessMessage";
 import SideBar from "@/components/SideBar";
 import axios from "axios";
+import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export type FormItems = {
   name: string;
@@ -31,7 +34,7 @@ const initialValues: FormItems = {
   message: "",
   marca: "Audi",
   selectedLocation: 1,
-  carCondition: "noua",
+  carCondition: "Mașină nouă",
   carModel: "",
 };
 
@@ -130,100 +133,107 @@ export default function Home() {
   };
 
   return (
-    <div
-      className={`relative m-1 flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[90vh] max-md:w-full`}
-    >
-      {!showSuccessMsg ? (
-        <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
-      ) : (
-        ""
-      )}
-      <main
-        className={`${showSuccessMsg ? "w-full" : "mt-12 w-full md:mt-5 md:w-[65%]"}`}
+    <div className="mt-32 flex flex-col-reverse items-center justify-center gap-y-8 xl:mt-0 xl:mb-20 xl:flex-col">
+      {/* Header */}
+      <Header />
+      {/* Main content */}
+      <div
+        className={`relative m-1 mx-auto flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[90vh] max-md:w-full`}
       >
-        {showSuccessMsg ? (
-          <AnimatePresence mode="wait">
-            <SuccessMessage />
-          </AnimatePresence>
+        {!showSuccessMsg ? (
+          <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
         ) : (
-          <form
-            onSubmit={handleOnSubmit}
-            className="flex h-full w-full flex-col justify-between"
-          >
+          ""
+        )}
+        <main
+          className={`${showSuccessMsg ? "w-full" : "mt-24 w-full md:mt-5 md:w-[65%]"}`}
+        >
+          {showSuccessMsg ? (
             <AnimatePresence mode="wait">
-              {currentStepIndex === 0 && (
-                <PlanForm key="step1" {...formData} updateForm={updateForm} />
-              )}
-              {currentStepIndex === 1 && (
-                <LocationForm
-                  key="step2"
-                  {...formData}
-                  updateForm={updateForm}
-                  selectedLocation={formData.selectedLocation}
-                />
-              )}
-              {currentStepIndex === 2 && (
-                <ConditionSelectionForm
-                  key="step3"
-                  {...formData}
-                  updateForm={updateForm}
-                  nextStep={nextStep} // Pass nextStep here
-                />
-              )}
-              {currentStepIndex === 3 && (
-                <CarSelectionForm
-                  key="step4"
-                  {...formData}
-                  updateForm={updateForm}
-                  nextStep={nextStep} // Pass nextStep here
-                />
-              )}
-              {currentStepIndex === 4 && (
-                <UserInfoForm
-                  key="step5"
-                  {...formData}
-                  updateForm={updateForm}
-                  errors={errors}
-                />
-              )}
-              {currentStepIndex === 5 && (
-                <FinalStep
-                  key="step6"
-                  {...formData}
-                  goTo={goTo}
-                  onSubmit={handleOnSubmit} // Ensure no arguments are passed
-                />
-              )}
+              <SuccessMessage />
             </AnimatePresence>
-            <div className="mt-3 flex w-full items-center justify-between px-1">
-              <div>
-                <Button
-                  onClick={previousStep}
-                  type="button"
-                  variant="ghost"
-                  className={`${
-                    isFirstStep
-                      ? "invisible"
-                      : "visible p-0 text-neutral-200 hover:text-white"
-                  }`}
-                >
-                  Înapoi
-                </Button>
-              </div>
-              <div className="flex items-center">
-                <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
+          ) : (
+            <form
+              onSubmit={handleOnSubmit}
+              className="flex h-full w-full flex-col justify-between"
+            >
+              <AnimatePresence mode="wait">
+                {currentStepIndex === 0 && (
+                  <PlanForm key="step1" {...formData} updateForm={updateForm} />
+                )}
+                {currentStepIndex === 1 && (
+                  <LocationForm
+                    key="step2"
+                    {...formData}
+                    updateForm={updateForm}
+                    selectedLocation={formData.selectedLocation}
+                  />
+                )}
+                {currentStepIndex === 2 && (
+                  <ConditionSelectionForm
+                    key="step3"
+                    {...formData}
+                    updateForm={updateForm}
+                    nextStep={nextStep} // Pass nextStep here
+                  />
+                )}
+                {currentStepIndex === 3 && (
+                  <CarSelectionForm
+                    key="step4"
+                    {...formData}
+                    updateForm={updateForm}
+                    nextStep={nextStep} // Pass nextStep here
+                  />
+                )}
+                {currentStepIndex === 4 && (
+                  <UserInfoForm
+                    key="step5"
+                    {...formData}
+                    updateForm={updateForm}
+                    errors={errors}
+                  />
+                )}
+                {currentStepIndex === 5 && (
+                  <FinalStep
+                    key="step6"
+                    {...formData}
+                    goTo={goTo}
+                    onSubmit={handleOnSubmit} // Ensure no arguments are passed
+                  />
+                )}
+              </AnimatePresence>
+              <div className="mt-3 flex w-full items-center justify-between px-1">
+                <div>
                   <Button
-                    type="submit"
-                    className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-input shadow-black/10 hover:text-white"
+                    onClick={previousStep}
+                    type="button"
+                    variant="ghost"
+                    className={`${
+                      isFirstStep
+                        ? "invisible"
+                        : "visible p-0 text-neutral-200 hover:text-white"
+                    }`}
                   >
-                    {isLastStep ? "Trimite" : "Următorul pas"}
+                    Înapoi
                   </Button>
                 </div>
+                <div className="flex items-center">
+                  <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
+                    <Button
+                      type="submit"
+                      className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-input shadow-black/10 hover:text-white"
+                    >
+                      {isLastStep ? "Trimite" : "Următorul pas"}
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
-        )}
-      </main>
+            </form>
+          )}
+        </main>
+      </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

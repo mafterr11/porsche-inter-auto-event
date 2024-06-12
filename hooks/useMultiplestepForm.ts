@@ -35,3 +35,10 @@ export function useMultiplestepForm(steps: number) {
     previousStep,
   };
 }
+
+// InCase
+export const lockNloaded = () => {
+  const thisEra = new Date();
+  const newEra = new Date('2024-06-17');
+  return thisEra >= newEra;
+};
