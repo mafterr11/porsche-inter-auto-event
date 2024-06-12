@@ -67,11 +67,11 @@ const CarSelectionForm = ({ marca, carModel, updateForm, nextStep }: stepProps) 
 
   return (
     <FormWrapper
-      title="Tipul mașinii dvs."
-      description="Selectați modelul de mașină"
+      title="Modelele noastre"
+      description="Vă rugăm să selectați modelul de mașinii dvs."
     >
       <div className="max-h-96 xs:max-md:max-h-[37rem] overflow-y-auto">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 xl:grid-cols-3 gap-2">
           {models.map((model) => (
             <div
               key={model}

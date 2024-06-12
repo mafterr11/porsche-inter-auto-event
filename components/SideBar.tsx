@@ -98,13 +98,13 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
               tabIndex={0}
               onClick={() => goTo(4)}
               className={`text-sm ${
-                currentStepIndex === 4 ? "text-[#6fe79f]" : "text-white"
+                currentStepIndex === 4 ? "text-[#C6CCCA]" : "text-white"
               } md:text-base`}
             >
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 4}
-                color="#6fe79f"
+                color="#C6CCCA"
               >
                 Date personale
               </RoughNotation>

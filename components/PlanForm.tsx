@@ -26,7 +26,7 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
 
   return (
     <FormWrapper
-      title="Marca"
+      title="Mărcile noastre"
       description="Vă rugăm să selectați marca mașinii dvs."
     >
       <ToggleGroup.Root

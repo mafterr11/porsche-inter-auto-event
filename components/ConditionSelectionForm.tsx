@@ -19,7 +19,7 @@ const ConditionSelectionForm = ({ carCondition, updateForm, nextStep }: stepProp
   return (
     <FormWrapper
       title="Selectați starea mașinii dvs."
-      description="Vă rugăm să alegeți dacă mașina este nouă sau second hand."
+      description="Vă rugăm să alegeți dacă mașina este nouă sau rulată."
     >
       <div className="flex flex-col gap-3">
         <div className="flex gap-3">
