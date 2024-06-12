@@ -31,32 +31,32 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
     >
       <ToggleGroup.Root
         orientation="horizontal"
-        className="grid grid-cols-3 gap-2 my-2 md:flex md:flex-wrap "
+        className="my-2 grid grid-cols-3 gap-2 md:flex md:flex-wrap"
         type="single"
         value={planSelected}
         onValueChange={handleValueChange}
       >
         <ToggleGroup.Item
           value="Audi"
-          className="border border-neutral-600 flex gap-3 p-6 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/audi.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Volkswagen"
-          className="border border-neutral-600 flex gap-3 p-3 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/vw.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Skoda"
-          className="border border-neutral-600 flex gap-3 p-6 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/skoda.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Seat"
-          className="border relative border-neutral-600 flex gap-3 p-3 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="relative flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image
             src="/seat.png"
@@ -67,7 +67,7 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Cupra"
-          className="border relative border-neutral-600 flex gap-3 p-3 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="relative flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image
             src="/cupra.png"

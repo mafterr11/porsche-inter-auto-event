@@ -13,7 +13,6 @@ import SuccessMessage from "@/components/SuccessMessage";
 import SideBar from "@/components/SideBar";
 import axios from "axios";
 
-
 export type FormItems = {
   name: string;
   email: string;
@@ -132,7 +131,7 @@ export default function Home() {
 
   return (
     <div
-      className={`flex justify-between h-[570px] max-md:h-[90vh] w-11/12 max-md:w-full max-w-4xl relative m-1 rounded-lg border border-neutral-700 bg-[#262626] p-4`}
+      className={`relative m-1 flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[90vh] max-md:w-full`}
     >
       {!showSuccessMsg ? (
         <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -140,7 +139,7 @@ export default function Home() {
         ""
       )}
       <main
-        className={`${showSuccessMsg ? "w-full" : "w-full mt-12 md:mt-5 md:w-[65%]"}`}
+        className={`${showSuccessMsg ? "w-full" : "mt-12 w-full md:mt-5 md:w-[65%]"}`}
       >
         {showSuccessMsg ? (
           <AnimatePresence mode="wait">
@@ -149,7 +148,7 @@ export default function Home() {
         ) : (
           <form
             onSubmit={handleOnSubmit}
-            className="w-full flex flex-col justify-between h-full"
+            className="flex h-full w-full flex-col justify-between"
           >
             <AnimatePresence mode="wait">
               {currentStepIndex === 0 && (
@@ -196,7 +195,7 @@ export default function Home() {
                 />
               )}
             </AnimatePresence>
-            <div className="w-full items-center flex justify-between mt-3 px-1">
+            <div className="mt-3 flex w-full items-center justify-between px-1">
               <div>
                 <Button
                   onClick={previousStep}
@@ -212,10 +211,10 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex items-center">
-                <div className="relative after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 focus-within:after:shadow-[#77f6aa] after:transition">
+                <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
                   <Button
                     type="submit"
-                    className="relative text-neutral-200 bg-neutral-900 border border-black/20 shadow-input shadow-black/10 rounded-xl hover:text-white"
+                    className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-input shadow-black/10 hover:text-white"
                   >
                     {isLastStep ? "Trimite" : "Următorul pas"}
                   </Button>

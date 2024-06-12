@@ -4,11 +4,12 @@ import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "outline-none inline-flex items-center justify-center text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800",
+  "outline-none inline-flex items-center justify-center text-sm font-medium  transition-colors disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800",
   {
     variants: {
       variant: {
-        default: "bg-slate-900 text-white dark:bg-slate-50 dark:text-slate-900",
+        default:
+          "bg-slate-900 text-white dark:bg-slate-50 dark:text-slate-900 hover:bg-slate-800 transition-all ease-in-out duration-500",
         destructive:
           "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
         outline:
@@ -16,7 +17,7 @@ const buttonVariants = cva(
         subtle:
           "bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100",
         ghost:
-          "bg-transparent dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",
+          "bg-transparent active:scale-[0.95] dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent hover:scale-[1.1] transition-all ease-in-out duration-500",
         link: "bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
       },
       size: {
@@ -29,7 +30,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -45,7 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

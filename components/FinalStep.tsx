@@ -7,7 +7,14 @@ type FinalStepProps = FormItems & {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>; // Ensure onSubmit function matches the expected type
 };
 
-const FinalStep = ({ name, email, phone, message, goTo, onSubmit }: FinalStepProps) => {
+const FinalStep = ({
+  name,
+  email,
+  phone,
+  message,
+  goTo,
+  onSubmit,
+}: FinalStepProps) => {
   return (
     <div className="flex flex-col gap-3 max-md:text-center">
       <h2 className="text-xl font-semibold text-white">Verificați detaliile</h2>
@@ -16,7 +23,7 @@ const FinalStep = ({ name, email, phone, message, goTo, onSubmit }: FinalStepPro
       <p className="text-white">Telefon: {phone}</p>
       <p className="text-white">Mesaj: {message}</p>
       <button
-        className="mt-4 p-2 bg-[#77f6aa] text-neutral-900 rounded-md max-w-[200px] mx-auto xl:mx-0"
+        className="mx-auto mt-4 max-w-[200px] rounded-md bg-[#77f6aa] p-2 text-neutral-900 xl:mx-0"
         onClick={() => goTo(0)}
       >
         Edit Details

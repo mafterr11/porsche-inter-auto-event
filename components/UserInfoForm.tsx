@@ -21,7 +21,7 @@ const UserInfoForm = ({
       title="Informații personale"
       description="Vă rugăm să introduceți numele, adresa de email și numărul de telefon."
     >
-      <div className="w-full flex flex-col gap-5">
+      <div className="flex w-full flex-col gap-5">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Nume</Label>
           <Input
@@ -35,7 +35,7 @@ const UserInfoForm = ({
             className="w-full"
             required
           />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+          {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">Email</Label>
@@ -50,7 +50,7 @@ const UserInfoForm = ({
             required
           />
           {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email}</p>
+            <p className="text-sm text-red-500">{errors.email}</p>
           )}
         </div>
         <div className="flex flex-col gap-2">
@@ -66,7 +66,7 @@ const UserInfoForm = ({
             required
           />
           {errors.phone && (
-            <p className="text-red-500 text-sm">{errors.phone}</p>
+            <p className="text-sm text-red-500">{errors.phone}</p>
           )}
         </div>
         <div className="flex flex-col gap-2">

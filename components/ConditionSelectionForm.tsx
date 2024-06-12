@@ -8,8 +8,14 @@ type stepProps = FormItems & {
   nextStep: () => void; // Add this to your props
 };
 
-const ConditionSelectionForm = ({ carCondition, updateForm, nextStep }: stepProps) => {
-  const [selectedCondition, setSelectedCondition] = useState<string>(carCondition || "Masina noua");
+const ConditionSelectionForm = ({
+  carCondition,
+  updateForm,
+  nextStep,
+}: stepProps) => {
+  const [selectedCondition, setSelectedCondition] = useState<string>(
+    carCondition || "Masina noua",
+  );
 
   const handleNextStep = () => {
     updateForm({ carCondition: selectedCondition });
@@ -24,13 +30,13 @@ const ConditionSelectionForm = ({ carCondition, updateForm, nextStep }: stepProp
       <div className="flex flex-col gap-3">
         <div className="flex gap-3">
           <button
-            className={`border p-3 rounded-md cursor-pointer ${selectedCondition === "Mașină nouă" ? "bg-neutral-900 border-[#77f6aa]" : "border-neutral-600"}`}
+            className={`cursor-pointer rounded-md border p-3 ${selectedCondition === "Mașină nouă" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
             onClick={() => setSelectedCondition("Mașină nouă")}
           >
             Nouă
           </button>
           <button
-            className={`border p-3 rounded-md cursor-pointer ${selectedCondition === "Mașină rulată" ? "bg-neutral-900 border-[#77f6aa]" : "border-neutral-600"}`}
+            className={`cursor-pointer rounded-md border p-3 ${selectedCondition === "Mașină rulată" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
             onClick={() => setSelectedCondition("Mașină rulată")}
           >
             Rulată

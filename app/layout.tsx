@@ -1,6 +1,6 @@
 import { Ubuntu } from "next/font/google";
-
 import "./globals.css";
+import { constructMetadata } from "@/lib/utils";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -8,6 +8,8 @@ const ubuntu = Ubuntu({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const metadata = constructMetadata();
 
 export default function RootLayout({
   children,
@@ -19,8 +21,7 @@ export default function RootLayout({
       lang="en"
       className={`${ubuntu.variable} bg-[#384967] text-neutral-200`}
     >
-      <head />
-      <body className="flex justify-center items-center h-screen w-full mt-12 ">
+      <body className="mt-12 flex h-screen w-full items-center justify-center">
         {children}
       </body>
     </html>

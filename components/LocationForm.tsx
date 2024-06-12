@@ -29,15 +29,15 @@ const LocationForm = ({ updateForm, selectedLocation }: stepProps) => {
       <div className="flex flex-col gap-3">
         {locations.map((location) => (
           <div
-            className={`border border-neutral-600 flex flex-col gap-1 p-3 rounded-md cursor-pointer w-fit ${
+            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border border-neutral-600 p-3 ${
               selectedLocation === location.id
-                ? "border-[#77f6aa] bg-neutral-900"
+                ? "border-[#6185C1] bg-neutral-900"
                 : ""
-            } hover:border-[#77f6aa]`}
+            } hover:border-[#6185C1]`}
             key={location.id}
             onClick={() => handleLocationChange(location.id)}
           >
-            <p className="text-white font-semibold">{location.title}</p>
+            <p className="font-semibold text-white">{location.title}</p>
             <p className="text-sm text-neutral-300">{location.subtitle}</p>
           </div>
         ))}
