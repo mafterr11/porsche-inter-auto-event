@@ -31,51 +31,49 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
     >
       <ToggleGroup.Root
         orientation="horizontal"
-        className="flex gap-3 my-2 flex-wrap "
+        className="grid grid-cols-3 gap-2 my-2 md:flex md:flex-wrap "
         type="single"
         value={planSelected}
         onValueChange={handleValueChange}
       >
         <ToggleGroup.Item
           value="Audi"
-          className="border border-neutral-600 flex gap-3 p-6 h-24 rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="border border-neutral-600 flex gap-3 p-6 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/audi.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Volkswagen"
-          className="border border-neutral-600 flex gap-3 p-3 h-24 rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="border border-neutral-600 flex gap-3 p-3 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/vw.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Skoda"
-          className="border border-neutral-600 flex gap-3 p-6 h-24 rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="border border-neutral-600 flex gap-3 p-6 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image src="/skoda.png" width={300} height={300} alt="alabala" />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Seat"
-          className="border border-neutral-600 flex gap-3 p-3 h-24 rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="border relative border-neutral-600 flex gap-3 p-3 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image
             src="/seat.png"
-            width={300}
-            height={300}
+            fill
             alt="alabala"
-            className="pt-10"
+            className="abosolute inset-0 object-contain"
           />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Cupra"
-          className="border border-neutral-600 flex gap-3 p-3 h-24 rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
+          className="border relative border-neutral-600 flex gap-3 p-3 h-[6.7rem] xs:h-32 w-[6.7rem] xs:w-32  rounded-md  data-[state=on]:border-[#77f6aa] data-[state=on]:bg-gray-300 bg-white focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
           <Image
             src="/cupra.png"
-            width={300}
-            height={300}
+            fill
             alt="alabala"
-            className="pt-8"
+            className="absolute inset-0 object-contain"
           />
         </ToggleGroup.Item>
       </ToggleGroup.Root>

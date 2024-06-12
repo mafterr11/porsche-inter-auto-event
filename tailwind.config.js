@@ -4,6 +4,10 @@ module.exports = {
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xs: "400px",
+        "2xl": "1420px",
+      },
       fontFamily: {
         sans: ['var(--font-ubuntu)'],
       },
