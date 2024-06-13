@@ -55,11 +55,67 @@ export default function Home() {
   } = useMultiplestepForm(6); // Updated step count
 
   const updateForm = useCallback((fieldToUpdate: Partial<FormItems>) => {
-    setFormData((prev) => ({ ...prev, ...fieldToUpdate }));
+    const { name, email, phone, message, carModel } = fieldToUpdate;
 
-    if (fieldToUpdate.carModel) {
-      setErrors((prev) => ({ ...prev, carModel: "" }));
+    if (name && name.trim().length < 3) {
+      setErrors((prevState) => ({
+        ...prevState,
+        name: "Name should be at least 3 characters long",
+      }));
+    } else if (name && name.trim().length > 15) {
+      setErrors((prevState) => ({
+        ...prevState,
+        name: "Name should be no longer than 15 characters",
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        name: "",
+      }));
     }
+
+    if (email && !/\S+@\S+\.\S+/.test(email)) {
+      setErrors((prevState) => ({
+        ...prevState,
+        email: "Please enter a valid email address",
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        email: "",
+      }));
+    }
+
+    if (phone && !/^[0-9]{10}$/.test(phone)) {
+      setErrors((prevState) => ({
+        ...prevState,
+        phone: "Please enter a valid 10-digit phone number",
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        phone: "",
+      }));
+    }
+
+    if (message && message.trim().length < 3) {
+      setErrors((prevState) => ({
+        ...prevState,
+        message: "Message should be at least 3 characters long",
+      }));
+    } else if (message && message.trim().length > 15) {
+      setErrors((prevState) => ({
+        ...prevState,
+        message: "Message should be no longer than 15 characters",
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        message: "",
+      }));
+    }
+
+    setFormData((prev) => ({ ...prev, ...fieldToUpdate }));
   }, []);
 
   const handleReCaptchaSubmit = async () => {
