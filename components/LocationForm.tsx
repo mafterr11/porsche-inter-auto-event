@@ -9,12 +9,12 @@ type stepProps = FormItems & {
 const locations = [
   {
     id: 1,
-    title: "Porsche Pipera (PBN)",
+    title: "Porsche Pipera",
     subtitle: "Bd. Pipera 1/X, Voluntari, Ilfov",
   },
   {
     id: 2,
-    title: "Porsche Bucuresti Vest 2 (PBV)",
+    title: "Porsche Bucuresti Vest 2",
     subtitle: "Sos. de centura 53, Chiajna, Jud. Ilfov",
   },
 ];

@@ -22,8 +22,8 @@ export const EmailTemplate = ({
     <p>
       Locatie selectata:{" "}
       {selectedLocation === 1
-        ? "Porsche Pipera (PBN)"
-        : "Porsche Bucuresti Vest 2 (PBV)"}
+        ? "Porsche Pipera"
+        : "Porsche Bucuresti Vest 2"}
     </p>
     <p>Conditie masina: {carCondition}</p>
     <p>Model masina: {carModel}</p>

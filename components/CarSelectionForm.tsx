@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FormItems } from "@/app/page";
 import FormWrapper from "./FormWrapper";
-import { Button } from "@/components/ui/button";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
@@ -70,9 +69,14 @@ const CarSelectionForm = ({
 
   const models = marca ? carModels[marca] : [];
 
+  useEffect(() => {
+    if (selectedModel) {
+      updateForm({ carModel: selectedModel });
+    }
+  }, [selectedModel, updateForm]);
+
   const handleModelChange = (model: string) => {
     setSelectedModel(model);
-    updateForm({ carModel: model });
   };
 
   return (
@@ -80,12 +84,16 @@ const CarSelectionForm = ({
       title="Modelele noastre"
       description="Vă rugăm să selectați modelul de mașinii dvs."
     >
-      <div className=" max-h-80 overflow-y-auto xs:max-md:max-h-[33rem]">
+      <div className="max-h-80 overflow-y-auto xs:max-md:max-h-[33rem]">
         <div className="grid grid-cols-2 gap-2 xl:grid-cols-3">
           {models.map((model) => (
             <div
               key={model}
-              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 ${selectedModel === model ? "border-[#805239] bg-neutral-900" : "border-neutral-600 hover:border-[#805239]"}`}
+              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 ${
+                selectedModel === model
+                  ? "border-[#805239] bg-neutral-900"
+                  : "border-neutral-600 hover:border-[#805239]"
+              }`}
               onClick={() => handleModelChange(model)}
             >
               <img

@@ -12,7 +12,6 @@ import FinalStep from "@/components/FinalStep";
 import SuccessMessage from "@/components/SuccessMessage";
 import SideBar from "@/components/SideBar";
 import axios from "axios";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/components/ui/use-toast";
@@ -55,7 +54,7 @@ export default function Home() {
   } = useMultiplestepForm(6); // Updated step count
 
   function updateForm(fieldToUpdate: Partial<FormItems>) {
-    const { name, email, phone, message } = fieldToUpdate;
+    const { name, email, phone, message, carModel } = fieldToUpdate;
 
     if (name && name.trim().length < 3) {
       setErrors((prevState) => ({
@@ -114,6 +113,14 @@ export default function Home() {
         message: "",
       }));
     }
+
+    if (carModel) {
+      setErrors((prevState) => ({
+        ...prevState,
+        carModel: "", // Clear the car model error
+      }));
+    }
+
     setFormData({ ...formData, ...fieldToUpdate });
   }
 
@@ -122,7 +129,20 @@ export default function Home() {
     if (Object.values(errors).some((error) => error)) {
       return;
     }
-    
+
+    // Car Selection Step Validation
+    if (currentStepIndex === 3 && !formData.carModel) {
+      toast({
+        title: "No car selected",
+        description: "Please select a car model to proceed.",
+      });
+      setErrors((prevState) => ({
+        ...prevState,
+        carModel: "Please select a car model",
+      }));
+      return;
+    }
+
     if (isLastStep) {
       try {
         await axios.post("/api/send", formData); // Adjust the API endpoint as necessary
