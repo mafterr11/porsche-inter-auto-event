@@ -133,12 +133,12 @@ export default function Home() {
   };
 
   return (
-    <div className="mt-32 flex flex-col-reverse items-center justify-center gap-y-8 xl:mt-0 xl:mb-20 xl:flex-col">
+    <div className="pt-8 flex flex-col-reverse items-center justify-center gap-y-8 xl:mt-0 xl:mb-20 xl:flex-col">
       {/* Header */}
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[90vh] max-md:w-full`}
+        className={`relative m-1 mx-auto flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[95vh] max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -202,7 +202,7 @@ export default function Home() {
                   />
                 )}
               </AnimatePresence>
-              <div className="mt-3 flex w-full items-center justify-between px-1">
+              <div className="flex w-full items-center justify-between px-1">
                 <div>
                   <Button
                     onClick={previousStep}
@@ -232,8 +232,6 @@ export default function Home() {
           )}
         </main>
       </div>
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

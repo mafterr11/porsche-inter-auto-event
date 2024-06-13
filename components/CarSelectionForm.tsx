@@ -88,7 +88,7 @@ const CarSelectionForm = ({
       title="Modelele noastre"
       description="Vă rugăm să selectați modelul de mașinii dvs."
     >
-      <div className="max-h-96 overflow-y-auto xs:max-md:max-h-[37rem]">
+      <div className=" max-h-80 overflow-y-auto xs:max-md:max-h-[33rem]">
         <div className="grid grid-cols-2 gap-2 xl:grid-cols-3">
           {models.map((model) => (
             <div
