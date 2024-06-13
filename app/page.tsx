@@ -121,7 +121,6 @@ export default function Home() {
       if (!acceptTerms) {
         setErrors((prevState) => ({
           ...prevState,
-          acceptTerms: "You must accept the terms",
         }));
       } else {
         setErrors((prevState) => ({
@@ -154,19 +153,19 @@ export default function Home() {
       },
     });
 
-    // if (response?.data?.success === true) {
-    //   console.log(`Success with score: ${response?.data?.score}`);
-    //   toast({
-    //     title: "Success",
-    //     description: "ReCaptcha Verified and Form Submitted!",
-    //   });
-    // } else {
-    //   console.log(`Failure with score: ${response?.data?.score}`);
-    //   toast({
-    //     title: "Error",
-    //     description: "Failed to verify recaptcha! You must be a robot!",
-    //   });
-    // }
+    if (response?.data?.success === true) {
+      console.log(`Success with score: ${response?.data?.score}`);
+      toast({
+        title: "Success",
+        description: "ReCaptcha Verified and Form Submitted!",
+      });
+    } else {
+      console.log(`Failure with score: ${response?.data?.score}`);
+      toast({
+        title: "Error",
+        description: "Failed to verify recaptcha! You must be a robot!",
+      });
+    }
   };
 
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -217,7 +216,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[95vh] max-md:w-full`}
+        className={`relative m-1 mx-auto flex h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 max-md:h-[90vh] max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
