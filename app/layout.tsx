@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className="relative h-full w-full">
         <div className="absolute inset-0 h-full bg-black/40" />
         <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
+        <Footer />
         <Toaster />
       </body>
     </html>
