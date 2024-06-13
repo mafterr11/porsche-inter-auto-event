@@ -19,9 +19,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ubuntu.variable} bg-bg bg-center bg-cover bg-no-repeat bg-fixed text-neutral-200 overflow-x-hidden`}
+      className={`${ubuntu.variable} relative bg-bg bg-center bg-cover bg-no-repeat bg-fixed text-neutral-200 overflow-x-hidden`}
     >
-      <body className="mt-12 flex h-screen w-full items-center justify-center">
+      <div className="absolute inset-0 bg-black/40 -z-10"/>
+      <body className="relative mt-12 flex h-screen w-full items-center justify-center">
         {children}
       </body>
     </html>
