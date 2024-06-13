@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function constructMetadata({
   title = "PIA | Offer Fest",
-  description = "",
+  description = "Doar în perioada 17-22 iunie, vizitați-ne la Porsche Pipera sau Porsche București Vest pentru a testa gama noastră largă de mașini. Vă așteptăm!",
   image = "/logo.png",
   icons = "/logo.png",
 }: {
