@@ -31,7 +31,7 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
     >
       <ToggleGroup.Root
         orientation="horizontal"
-        className="my-2 grid grid-cols-3 gap-4"
+        className="my-2 grid grid-cols-3 gap-2"
         type="single"
         value={planSelected}
         onValueChange={handleValueChange}
@@ -40,7 +40,7 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
           <ToggleGroup.Item
             key={brand}
             value={brand}
-            className="relative flex min-h-[100px] min-w-[100px] items-center justify-center rounded-md border-2 border-neutral-600 bg-white p-2 hover:border-red-500 focus:border-red-500 focus:bg-gray-300 xs:min-h-[120px] xl:min-h-[150px]"
+            className="relative flex min-h-[100px] min-w-[100px] items-center justify-center rounded-md border-2 border-neutral-600 bg-white p-2 hover:border-red-500 focus:border-red-500 focus:bg-gray-300 xs:min-h-[115px] xs:min-w-[115px] xl:min-h-[140px]"
           >
             <Image
               src={`/${brand.toLowerCase()}.png`}

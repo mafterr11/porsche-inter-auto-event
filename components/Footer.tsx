@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="lg:max-xl:absolute inset-0 bg-black/40" />
       <div className="lg:max-xl:relative">{currentYear} © Porsche Inter Auto Romania</div>
       <div className="lg:max-xl:relative">
-        <Link href="https://myriad-tech.ro" className="font-bold">
+        <Link href="https://myriad-tech.ro" target={ "_blank"} className="font-bold">
           Myriad Tech
         </Link>{" "}
         - Toate drepturile rezervate.
