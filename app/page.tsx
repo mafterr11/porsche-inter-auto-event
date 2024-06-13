@@ -180,6 +180,7 @@ export default function Home() {
       toast({
         title: "Acceptați termenii și condițiile!",
         description: "Trebuie să acceptați prelucrarea datelor GDPR.",
+        variant: "destructive",
       });
       setErrors((prevState) => ({
         ...prevState,
