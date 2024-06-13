@@ -69,3 +69,7 @@
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+.scrollable-container {
+  -webkit-overflow-scrolling: touch;
+}
