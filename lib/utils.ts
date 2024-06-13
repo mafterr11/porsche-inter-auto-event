@@ -30,12 +30,12 @@ export function constructMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      site: "https://offerfest.pia.ro",
+      site: "https://offerfest-pia.vercel.app",
       description,
       images: [image],
-      creator: "@myriad-tech",
+      creator: "@PIA_RO",
     },
     icons,
-    metadataBase: new URL("https://offerfest.pia.ro"),
+    metadataBase: new URL("https://offerfest-pia.vercel.app"),
   };
 }
