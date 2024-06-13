@@ -15,6 +15,7 @@ import axios from "axios";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useToast } from "@/components/ui/use-toast";
 
 export type FormItems = {
   name: string;
@@ -39,6 +40,7 @@ const initialValues: FormItems = {
 };
 
 export default function Home() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const {
@@ -120,6 +122,7 @@ export default function Home() {
     if (Object.values(errors).some((error) => error)) {
       return;
     }
+    
     if (isLastStep) {
       try {
         await axios.post("/api/send", formData); // Adjust the API endpoint as necessary
