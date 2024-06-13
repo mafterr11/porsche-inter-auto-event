@@ -133,7 +133,7 @@ export default function Home() {
   };
 
   return (
-    <div className="pt-8 flex flex-col-reverse items-center justify-center gap-y-8 xl:mt-0 xl:mb-20 xl:flex-col">
+    <div className="flex flex-col-reverse items-center justify-center gap-y-8 pt-8 xl:mt-0 xl:mb-20 xl:flex-col">
       {/* Header */}
       <Header />
       {/* Main content */}
