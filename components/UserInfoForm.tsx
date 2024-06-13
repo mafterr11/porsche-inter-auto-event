@@ -13,6 +13,8 @@ const UserInfoForm = ({
   name,
   email,
   phone,
+  message,
+  acceptTerms, // Added acceptTerms prop
   errors,
   updateForm,
 }: StepProps) => {
@@ -80,6 +82,20 @@ const UserInfoForm = ({
             required
           />
         </div>
+        <div className="flex items-center gap-2">
+          <Input
+            type="checkbox"
+            name="acceptTerms"
+            id="acceptTerms"
+            checked={acceptTerms}
+            onChange={(e) => updateForm({ acceptTerms: e.target.checked })}
+            className="h-[20px] w-[20px] xl:w-[15px] xl:h-[15px]"
+          />
+          <span className="text-[15px]">Sunt de acord cu prelucrarea datelor(GDPR)</span>
+        </div>
+        {errors.acceptTerms && (
+          <p className="text-sm text-red-500">{errors.acceptTerms}</p>
+        )}
       </div>
     </FormWrapper>
   );

@@ -25,6 +25,7 @@ export type FormItems = {
   selectedLocation?: number;
   carCondition?: string;
   carModel?: string;
+  acceptTerms: boolean; // Added acceptTerms field
 };
 
 const initialValues: FormItems = {
@@ -36,6 +37,7 @@ const initialValues: FormItems = {
   selectedLocation: 1,
   carCondition: "Mașină nouă",
   carModel: "",
+  acceptTerms: false, // Initial value for acceptTerms
 };
 
 export default function Home() {
@@ -55,7 +57,7 @@ export default function Home() {
   } = useMultiplestepForm(6); // Updated step count
 
   const updateForm = useCallback((fieldToUpdate: Partial<FormItems>) => {
-    const { name, email, phone, message, carModel } = fieldToUpdate;
+    const { name, email, phone, message, acceptTerms } = fieldToUpdate;
 
     if (name && name.trim().length < 3) {
       setErrors((prevState) => ({
@@ -115,6 +117,20 @@ export default function Home() {
       }));
     }
 
+    if (acceptTerms !== undefined) {
+      if (!acceptTerms) {
+        setErrors((prevState) => ({
+          ...prevState,
+          acceptTerms: "You must accept the terms",
+        }));
+      } else {
+        setErrors((prevState) => ({
+          ...prevState,
+          acceptTerms: "",
+        }));
+      }
+    }
+
     setFormData((prev) => ({ ...prev, ...fieldToUpdate }));
   }, []);
 
@@ -166,6 +182,18 @@ export default function Home() {
       });
       setErrors((prevState) => ({
         ...prevState,
+      }));
+      return;
+    }
+
+    if (currentStepIndex === 4 && !formData.acceptTerms) {
+      toast({
+        title: "Acceptați termenii și condițiile!",
+        description: "Trebuie să acceptați prelucrarea datelor GDPR.",
+      });
+      setErrors((prevState) => ({
+        ...prevState,
+        acceptTerms: "You must accept the terms",
       }));
       return;
     }
