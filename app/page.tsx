@@ -62,12 +62,12 @@ export default function Home() {
     if (name && name.trim().length < 3) {
       setErrors((prevState) => ({
         ...prevState,
-        name: "Name should be at least 3 characters long",
+        name: "Numele să fie minim 3 caractere",
       }));
-    } else if (name && name.trim().length > 15) {
+    } else if (name && name.trim().length > 30) {
       setErrors((prevState) => ({
         ...prevState,
-        name: "Name should be no longer than 15 characters",
+        name: "Numele să fie maxim 30 de caractere",
       }));
     } else {
       setErrors((prevState) => ({
@@ -79,7 +79,7 @@ export default function Home() {
     if (email && !/\S+@\S+\.\S+/.test(email)) {
       setErrors((prevState) => ({
         ...prevState,
-        email: "Please enter a valid email address",
+        email: "Introduceți un email valid",
       }));
     } else {
       setErrors((prevState) => ({
@@ -91,7 +91,7 @@ export default function Home() {
     if (phone && !/^[0-9]{10}$/.test(phone)) {
       setErrors((prevState) => ({
         ...prevState,
-        phone: "Please enter a valid 10-digit phone number",
+        phone: "Introduceți un număr de telefon valid de 10 cifre",
       }));
     } else {
       setErrors((prevState) => ({
@@ -100,15 +100,14 @@ export default function Home() {
       }));
     }
 
-    if (message && message.trim().length < 3) {
+    if (message && message.trim().length < 0) {
       setErrors((prevState) => ({
         ...prevState,
-        message: "Message should be at least 3 characters long",
       }));
-    } else if (message && message.trim().length > 15) {
+    } else if (message && message.trim().length > 150) {
       setErrors((prevState) => ({
         ...prevState,
-        message: "Message should be no longer than 15 characters",
+        message: "Mesajul nu trebuie să depășească 150 de caractere",
       }));
     } else {
       setErrors((prevState) => ({
