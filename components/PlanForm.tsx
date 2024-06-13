@@ -40,19 +40,37 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
           value="Audi"
           className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
-          <Image src="/audi.png" width={300} height={300} alt="alabala" />
+          <Image
+            src="/audi.png"
+            width={300}
+            height={300}
+            priority
+            alt="Audi logo"
+          />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Volkswagen"
           className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-3 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
-          <Image src="/vw.png" width={300} height={300} alt="alabala" />
+          <Image
+            src="/vw.png"
+            width={300}
+            height={300}
+            priority
+            alt="Volkswagen logo"
+          />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Skoda"
           className="flex h-[6.7rem] w-[6.7rem] gap-3 rounded-md border-2 border-neutral-600 bg-white p-6 outline-none hover:border-[#E40001] focus:border-[#E40001] data-[state=on]:border-[#E40001] data-[state=on]:bg-gray-300 xs:h-32 xs:w-32 md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
-          <Image src="/skoda.png" width={300} height={300} alt="alabala" />
+          <Image
+            src="/skoda.png"
+            width={300}
+            height={300}
+            priority
+            alt="Skoda logo"
+          />
         </ToggleGroup.Item>
         <ToggleGroup.Item
           value="Seat"
@@ -61,8 +79,10 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
           <Image
             src="/seat.png"
             fill
-            alt="alabala"
-            className="abosolute inset-0 object-contain"
+            priority
+            sizes="(max-width: 768px) 100vw, 24rem" // Add the sizes prop
+            alt="Seat logo"
+            className="absolute inset-0 object-contain"
           />
         </ToggleGroup.Item>
         <ToggleGroup.Item
@@ -72,7 +92,9 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
           <Image
             src="/cupra.png"
             fill
-            alt="alabala"
+            priority
+            sizes="(max-width: 768px) 100vw, 24rem" // Add the sizes prop
+            alt="Cupra logo"
             className="absolute inset-0 object-contain"
           />
         </ToggleGroup.Item>
