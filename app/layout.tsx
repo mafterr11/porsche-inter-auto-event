@@ -3,6 +3,7 @@ import "./globals.css";
 import { constructMetadata } from "@/lib/utils";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -21,14 +22,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ubuntu.variable} bg-bg bg-center bg-cover bg-no-repeat bg-fixed text-neutral-200 overflow-x-hidden`}
+      className={`${ubuntu.variable} overflow-x-hidden bg-bg bg-cover bg-fixed bg-center bg-no-repeat text-neutral-200`}
     >
-      <body className=" relative h-full w-full">
-        <div className="absolute inset-0 bg-black/40 h-auto"/>
-        {children}
-            {/* Footer */}
-      <Footer />
-      <Toaster />
+      <body className="relative h-full w-full">
+        <div className="absolute inset-0 h-auto bg-black/40" />
+        <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
+        {/* Footer */}
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { useMultiplestepForm } from "hooks/useMultiplestepForm";
 import { AnimatePresence } from "framer-motion";
@@ -13,8 +13,8 @@ import SuccessMessage from "@/components/SuccessMessage";
 import SideBar from "@/components/SideBar";
 import axios from "axios";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { useToast } from "@/components/ui/use-toast";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export type FormItems = {
   name: string;
@@ -39,6 +39,7 @@ const initialValues: FormItems = {
 };
 
 export default function Home() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const { toast } = useToast();
   const [formData, setFormData] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -53,76 +54,48 @@ export default function Home() {
     showSuccessMsg,
   } = useMultiplestepForm(6); // Updated step count
 
-  function updateForm(fieldToUpdate: Partial<FormItems>) {
-    const { name, email, phone, message, carModel } = fieldToUpdate;
+  const updateForm = useCallback((fieldToUpdate: Partial<FormItems>) => {
+    setFormData((prev) => ({ ...prev, ...fieldToUpdate }));
 
-    if (name && name.trim().length < 3) {
-      setErrors((prevState) => ({
-        ...prevState,
-        name: "Name should be at least 3 characters long",
-      }));
-    } else if (name && name.trim().length > 15) {
-      setErrors((prevState) => ({
-        ...prevState,
-        name: "Name should be no longer than 15 characters",
-      }));
-    } else {
-      setErrors((prevState) => ({
-        ...prevState,
-        name: "",
-      }));
+    if (fieldToUpdate.carModel) {
+      setErrors((prev) => ({ ...prev, carModel: "" }));
+    }
+  }, []);
+
+  const handleReCaptchaSubmit = async () => {
+    if (!executeRecaptcha) {
+      console.log("not available to execute recaptcha");
+      return;
     }
 
-    if (email && !/\S+@\S+\.\S+/.test(email)) {
-      setErrors((prevState) => ({
-        ...prevState,
-        email: "Please enter a valid email address",
-      }));
-    } else {
-      setErrors((prevState) => ({
-        ...prevState,
-        email: "",
-      }));
-    }
+    const gRecaptchaToken = await executeRecaptcha("inquirySubmit");
 
-    if (phone && !/^[0-9]{10}$/.test(phone)) {
-      setErrors((prevState) => ({
-        ...prevState,
-        phone: "Please enter a valid 10-digit phone number",
-      }));
-    } else {
-      setErrors((prevState) => ({
-        ...prevState,
-        phone: "",
-      }));
-    }
+    const response = await axios({
+      method: "post",
+      url: "/api/recaptchaSubmit",
+      data: {
+        gRecaptchaToken,
+      },
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    });
 
-    if (message && message.trim().length < 3) {
-      setErrors((prevState) => ({
-        ...prevState,
-        message: "Message should be at least 3 characters long",
-      }));
-    } else if (message && message.trim().length > 15) {
-      setErrors((prevState) => ({
-        ...prevState,
-        message: "Message should be no longer than 15 characters",
-      }));
-    } else {
-      setErrors((prevState) => ({
-        ...prevState,
-        message: "",
-      }));
-    }
-
-    if (carModel) {
-      setErrors((prevState) => ({
-        ...prevState,
-        carModel: "", // Clear the car model error
-      }));
-    }
-
-    setFormData({ ...formData, ...fieldToUpdate });
-  }
+    // if (response?.data?.success === true) {
+    //   console.log(`Success with score: ${response?.data?.score}`);
+    //   toast({
+    //     title: "Success",
+    //     description: "ReCaptcha Verified and Form Submitted!",
+    //   });
+    // } else {
+    //   console.log(`Failure with score: ${response?.data?.score}`);
+    //   toast({
+    //     title: "Error",
+    //     description: "Failed to verify recaptcha! You must be a robot!",
+    //   });
+    // }
+  };
 
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -130,21 +103,20 @@ export default function Home() {
       return;
     }
 
-    // Car Selection Step Validation
     if (currentStepIndex === 3 && !formData.carModel) {
       toast({
-        title: "No car selected",
-        description: "Please select a car model to proceed.",
+        title: "Nu ați selectat nici o mașină!",
+        description: "Vă rugăm să alegeți un model",
       });
       setErrors((prevState) => ({
         ...prevState,
-        carModel: "Please select a car model",
       }));
       return;
     }
 
     if (isLastStep) {
       try {
+        await handleReCaptchaSubmit();
         await axios.post("/api/send", formData); // Adjust the API endpoint as necessary
         nextStep();
       } catch (error) {
@@ -205,6 +177,7 @@ export default function Home() {
                     key="step4"
                     {...formData}
                     updateForm={updateForm}
+                    errors={errors}
                   />
                 )}
                 {currentStepIndex === 4 && (

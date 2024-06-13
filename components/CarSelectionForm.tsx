@@ -4,6 +4,7 @@ import FormWrapper from "./FormWrapper";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
+  errors: Record<string, string>;
 };
 
 const carModels = {
@@ -60,23 +61,18 @@ const carModelImages: Record<string, string> = {
   Tarraco: "/modele/seat/tarraco.png",
 };
 
-const CarSelectionForm = ({
-  marca,
-  carModel,
-  updateForm,
-}: stepProps) => {
+const CarSelectionForm = ({ marca, carModel, updateForm }: stepProps) => {
   const [selectedModel, setSelectedModel] = useState<string>(carModel || "");
 
-  const models = marca ? carModels[marca] : [];
-
   useEffect(() => {
-    if (selectedModel) {
+    if (selectedModel !== carModel) {
       updateForm({ carModel: selectedModel });
     }
-  }, [selectedModel, updateForm]);
+  }, [selectedModel, carModel, updateForm]);
 
   const handleModelChange = (model: string) => {
     setSelectedModel(model);
+    updateForm({ carModel: model });
   };
 
   return (
@@ -86,7 +82,7 @@ const CarSelectionForm = ({
     >
       <div className="max-h-80 overflow-y-auto xs:max-md:max-h-[33rem]">
         <div className="grid grid-cols-2 gap-2 xl:grid-cols-3">
-          {models.map((model) => (
+          {carModels[marca].map((model) => (
             <div
               key={model}
               className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 ${
