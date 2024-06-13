@@ -15,6 +15,7 @@ import axios from "axios";
 import Header from "@/components/Header";
 import { useToast } from "@/components/ui/use-toast";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import Footer from "@/components/Footer";
 
 export type FormItems = {
   name: string;
@@ -203,7 +204,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col-reverse items-center justify-center gap-y-8 pt-8 xl:mt-0 xl:mb-20 xl:flex-col h-full">
+    <div className="flex flex-col-reverse items-center justify-center gap-y-8 pt-8 xl:mt-0 xl:pb-20 xl:flex-col h-full">
       {/* Header */}
       <Header />
       {/* Main content */}
@@ -302,6 +303,8 @@ export default function Home() {
           )}
         </main>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
