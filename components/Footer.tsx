@@ -5,8 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="relative flex flex-col items-center justify-center py-4">
-      <div>{currentYear} © Porsche Inter Auto Romania</div>
-      <div>
+      <div className="lg:max-xl:absolute inset-0 bg-black/40" />
+      <div className="lg:max-xl:relative">{currentYear} © Porsche Inter Auto Romania</div>
+      <div className="lg:max-xl:relative">
         <Link href="https://myriad-tech.ro" className="font-bold">
           Myriad Tech
         </Link>{" "}
