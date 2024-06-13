@@ -38,13 +38,13 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
               tabIndex={0}
               onClick={() => goTo(1)}
               className={`text-sm ${
-                currentStepIndex === 1 ? "text-[#6185C1]" : "text-white"
+                currentStepIndex === 1 ? "text-[#073787]" : "text-white"
               } md:text-base`}
             >
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 1}
-                color="#6185C1"
+                color="#073787"
               >
                 Locația
               </RoughNotation>
@@ -57,14 +57,15 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
             <button
               tabIndex={0}
               onClick={() => goTo(2)}
+              // #48A82E
               className={`text-sm ${
-                currentStepIndex === 2 ? "text-[#48A82E]" : "text-white"
+                currentStepIndex === 2 ? "text-[#196350]" : "text-white"
               } md:text-base`}
             >
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 2}
-                color="#48A82E"
+                color="#196350"
               >
                 Tipul mașinii
               </RoughNotation>
