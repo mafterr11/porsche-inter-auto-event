@@ -80,7 +80,7 @@ const CarSelectionForm = ({ marca, carModel, updateForm }: stepProps) => {
       title="Modelele noastre"
       description="Vă rugăm să selectați modelul de mașinii dvs."
     >
-      <div className="scrollable-container max-h-80 overflow-y-auto xs:max-md:max-h-[33rem]">
+      <div className="scrollable-container max-h-80 overflow-y-auto xs:max-md:max-h-[29rem]">
         <div className="grid grid-cols-2 gap-2 xl:grid-cols-3">
           {carModels[marca].map((model) => (
             <div
