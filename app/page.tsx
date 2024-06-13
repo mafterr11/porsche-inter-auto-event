@@ -154,16 +154,8 @@ export default function Home() {
 
     if (response?.data?.success === true) {
       console.log(`Success with score: ${response?.data?.score}`);
-      toast({
-        title: "Success",
-        description: "ReCaptcha Verified and Form Submitted!",
-      });
     } else {
       console.log(`Failure with score: ${response?.data?.score}`);
-      toast({
-        title: "Error",
-        description: "Failed to verify recaptcha! You must be a robot!",
-      });
     }
   };
 
@@ -191,7 +183,6 @@ export default function Home() {
       });
       setErrors((prevState) => ({
         ...prevState,
-        acceptTerms: "You must accept the terms",
       }));
       return;
     }
