@@ -3,7 +3,7 @@ import FormWrapper from "./FormWrapper";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
-  selectedLocation?: number; // Add this line
+  selectedLocation?: number; // Ensure this prop is included
 };
 
 const locations = [
@@ -29,10 +29,10 @@ const LocationForm = ({ updateForm, selectedLocation }: stepProps) => {
       <div className="flex flex-col gap-3">
         {locations.map((location) => (
           <div
-            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border-2 border-neutral-600 p-3 ${
+            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border-2 p-3 ${
               selectedLocation === location.id
                 ? "border-[#6185C1] bg-neutral-900"
-                : ""
+                : "border-neutral-600"
             } hover:border-[#6185C1]`}
             key={location.id}
             onClick={() => handleLocationChange(location.id)}

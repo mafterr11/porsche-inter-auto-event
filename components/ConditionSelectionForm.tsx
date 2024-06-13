@@ -14,12 +14,19 @@ const ConditionSelectionForm = ({
   nextStep,
 }: stepProps) => {
   const [selectedCondition, setSelectedCondition] = useState<string>(
-    carCondition || "Masina noua",
+    carCondition || "Mașină nouă",
   );
 
+  const handleConditionChange = (condition: string) => {
+    setSelectedCondition(condition);
+    updateForm({ carCondition: condition });
+  };
+
   const handleNextStep = () => {
-    updateForm({ carCondition: selectedCondition });
-    nextStep();
+    if (selectedCondition) {
+      updateForm({ carCondition: selectedCondition });
+      nextStep();
+    }
   };
 
   return (
@@ -30,14 +37,16 @@ const ConditionSelectionForm = ({
       <div className="flex flex-col gap-3">
         <div className="flex gap-3">
           <button
+            type="button"
             className={`cursor-pointer rounded-md border-2 p-3 ${selectedCondition === "Mașină nouă" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
-            onClick={() => setSelectedCondition("Mașină nouă")}
+            onClick={() => handleConditionChange("Mașină nouă")}
           >
             Nouă
           </button>
           <button
+            type="button"
             className={`cursor-pointer rounded-md border-2 p-3 ${selectedCondition === "Mașină rulată" ? "border-[#48A82E] bg-neutral-900" : "border-neutral-600 hover:border-[#48A82E]"}`}
-            onClick={() => setSelectedCondition("Mașină rulată")}
+            onClick={() => handleConditionChange("Mașină rulată")}
           >
             Rulată
           </button>

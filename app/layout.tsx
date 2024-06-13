@@ -2,6 +2,7 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { constructMetadata } from "@/lib/utils";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -27,6 +28,7 @@ export default function RootLayout({
         {children}
             {/* Footer */}
       <Footer />
+      <Toaster />
       </body>
     </html>
   );

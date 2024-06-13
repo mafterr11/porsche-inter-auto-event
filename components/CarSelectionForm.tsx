@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
-  nextStep: () => void; // Add nextStep to props
 };
 
 const carModels = {
@@ -66,7 +65,6 @@ const CarSelectionForm = ({
   marca,
   carModel,
   updateForm,
-  nextStep,
 }: stepProps) => {
   const [selectedModel, setSelectedModel] = useState<string>(carModel || "");
 
@@ -75,12 +73,6 @@ const CarSelectionForm = ({
   const handleModelChange = (model: string) => {
     setSelectedModel(model);
     updateForm({ carModel: model });
-  };
-
-  const handleNextStep = () => {
-    if (selectedModel) {
-      nextStep();
-    }
   };
 
   return (

@@ -182,7 +182,6 @@ export default function Home() {
                     key="step4"
                     {...formData}
                     updateForm={updateForm}
-                    nextStep={nextStep} // Pass nextStep here
                   />
                 )}
                 {currentStepIndex === 4 && (
