@@ -89,9 +89,11 @@ const UserInfoForm = ({
             id="acceptTerms"
             checked={acceptTerms}
             onChange={(e) => updateForm({ acceptTerms: e.target.checked })}
-            className="h-[20px] w-[20px] xl:w-[15px] xl:h-[15px]"
+            className="h-[20px] w-[20px] xl:h-[15px] xl:w-[15px]"
           />
-          <span className="text-[15px]">Sunt de acord cu prelucrarea datelor(GDPR)</span>
+          <span className="text-[15px]">
+            Sunt de acord cu prelucrarea datelor(GDPR)
+          </span>
         </div>
         {errors.acceptTerms && (
           <p className="text-sm text-red-500">{errors.acceptTerms}</p>

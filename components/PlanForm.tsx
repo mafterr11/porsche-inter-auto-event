@@ -36,7 +36,7 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
         value={planSelected}
         onValueChange={handleValueChange}
       >
-        {["Audi", "vw", "Skoda", "Seat", "Cupra"].map((brand) => (
+        {["Audi", "Volkswagen", "Skoda", "Seat", "Cupra"].map((brand) => (
           <ToggleGroup.Item
             key={brand}
             value={brand}
