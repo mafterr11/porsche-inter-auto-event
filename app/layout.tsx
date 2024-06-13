@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ubuntu.variable} overflow-x-hidden`}
+      className={`${ubuntu.variable} relative overflow-x-hidden bg-bg bg-cover bg-fixed bg-center bg-no-repeat text-neutral-200 lg:max-xl:h-full`}
     >
-      <body className="relative h-full w-full bg-bg bg-cover bg-fixed bg-center bg-no-repeat text-neutral-200  lg:max-xl:h-full">
+      <body className="relative h-full w-full">
         <div className="absolute inset-0 h-auto bg-black/40" />
         <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
         {/* Footer */}
