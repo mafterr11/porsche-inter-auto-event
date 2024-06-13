@@ -30,6 +30,9 @@ module.exports = {
           750: '#313131'
         }
       },
+      backgroundImage: {
+        bg: "url('/bg.jpeg')",
+      },
       boxShadow: {
         input: `
           0px 1px 0px -1px var(--tw-shadow-color),
