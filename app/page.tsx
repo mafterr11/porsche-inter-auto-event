@@ -169,6 +169,7 @@ export default function Home() {
       toast({
         title: "Nu ați selectat nici o mașină!",
         description: "Vă rugăm să alegeți un model",
+        variant: "destructive",
       });
       setErrors((prevState) => ({
         ...prevState,
