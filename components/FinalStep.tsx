@@ -26,7 +26,7 @@ const FinalStep = ({
         className="mx-auto mt-4 max-w-[200px] rounded-md bg-[#77f6aa] p-2 text-neutral-900 xl:mx-0"
         onClick={() => goTo(0)}
       >
-        Edit Details
+        Editați detaliile
       </button>
     </div>
   );
