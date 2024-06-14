@@ -32,7 +32,7 @@ const LocationForm = ({ updateForm, selectedLocation }: stepProps) => {
             className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border-2 p-3 ${
               selectedLocation === location.id
                 ? // #6185C1
-                  "border-[#002E7A] bg-neutral-900"
+                  "border-[#002E7A] bg-background-accent"
                 : "border-neutral-600"
             } hover:border-[#002E7A]`}
             key={location.id}

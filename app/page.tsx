@@ -204,12 +204,12 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col-reverse items-center justify-center gap-y-8 pt-8 xl:mt-0 xl:pb-20 xl:flex-col h-full">
+    <div className="flex h-full flex-col-reverse items-center justify-center gap-y-8 pt-8 xl:mt-0 xl:flex-col xl:pb-20">
       {/* Header */}
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex md:h-[570px] w-11/12 max-w-4xl justify-between rounded-lg border border-neutral-700 bg-[#262626] p-4 h-screen xs:max-md:h-[90vh] max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-11/12 max-w-4xl md:h-[570px] ${currentStepIndex === 4 ? "h-screen" : ""} h-screen justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full xs:max-md:h-[90vh]`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -292,7 +292,7 @@ export default function Home() {
                   <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
                     <Button
                       type="submit"
-                      className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-input shadow-black/10 hover:text-white"
+                      className="bg-background-accent relative rounded-xl border border-black/20 text-neutral-200 shadow-input shadow-black/10 hover:text-white"
                     >
                       {isLastStep ? "Trimite" : "Următorul pas"}
                     </Button>

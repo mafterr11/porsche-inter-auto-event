@@ -87,7 +87,7 @@ const CarSelectionForm = ({ marca, carModel, updateForm }: stepProps) => {
               key={model}
               className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 ${
                 selectedModel === model
-                  ? "border-[#805239] bg-neutral-900"
+                  ? "border-[#805239] bg-background-accent"
                   : "border-neutral-600 hover:border-[#805239]"
               }`}
               onClick={() => handleModelChange(model)}

@@ -28,7 +28,14 @@ module.exports = {
       colors: {
         neutral: {
           750: '#313131'
-        }
+        },
+        background: {
+          DEFAULT: "#262626",
+          accent: "#171717",
+      },
+      sidebar: {
+        pas: "#737373"
+      }
       },
       backgroundImage: {
         bg: "url('/bg.jpeg')",
