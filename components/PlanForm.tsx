@@ -40,14 +40,14 @@ const PlanForm = ({ updateForm, marca }: stepProps) => {
           <ToggleGroup.Item
             key={brand}
             value={brand}
-            className={`${brand === "Cupra" ? "p-5" : ""} relative flex min-h-[100px] min-w-[100px] items-center justify-center rounded-md border-2 border-neutral-600 bg-white p-2 hover:border-red-500 focus:border-red-500 focus:bg-gray-300 xs:min-h-[115px] xs:min-w-[115px] xl:min-h-[140px]`}
+            className={`relative flex min-h-[100px] min-w-[100px] items-center justify-center rounded-md border-2 border-neutral-600 bg-white p-2 hover:border-red-500 focus:border-red-500 focus:bg-gray-300 xs:min-h-[115px] xs:min-w-[115px] xl:min-h-[140px]`}
           >
             <Image
               src={`/${brand.toLowerCase()}.png`}
               alt={`${brand} logo`}
               width={100} // Set a fixed width for the images
               height={100} // Set a fixed height for the images
-              className="object-contain"
+              className={`${brand === "Cupra" ? "p-2" : ""} object-contain`}
             />
           </ToggleGroup.Item>
         ))}

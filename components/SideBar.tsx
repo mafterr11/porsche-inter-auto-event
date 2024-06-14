@@ -11,13 +11,13 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
       <nav className="h-full rounded-md border border-neutral-700 bg-background-accent py-5 text-slate-200 md:p-5">
         <ul className="flex flex-wrap justify-center gap-8 md:flex-col">
           <li className="flex flex-col items-start font-medium">
-            <span className="hidden text-sm uppercase text-sidebar-pas md:flex">
+            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
               pasul 1
             </span>
             <button
               tabIndex={0}
               onClick={() => goTo(0)}
-              className={`text-sm ${
+              className={`text-sm font-bold ${
                 currentStepIndex === 0 ? "text-[#E40001]" : ""
               } md:text-base`}
             >
@@ -31,13 +31,13 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
             </button>
           </li>
           <li className="flex flex-col items-start font-medium">
-            <span className="hidden text-sm uppercase text-sidebar-pas md:flex">
+            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
               pasul 2
             </span>
             <button
               tabIndex={0}
               onClick={() => goTo(1)}
-              className={`text-sm ${
+              className={`text-sm font-bold ${
                 currentStepIndex === 1 ? "text-[#073787]" : ""
               } md:text-base`}
             >
@@ -51,14 +51,14 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
             </button>
           </li>
           <li className="flex flex-col items-start font-medium">
-            <span className="hidden text-sm uppercase text-sidebar-pas md:flex">
+            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
               pasul 3
             </span>
             <button
               tabIndex={0}
               onClick={() => goTo(2)}
               // #48A82E
-              className={`text-sm ${
+              className={`text-sm font-bold ${
                 currentStepIndex === 2 ? "text-[#196350]" : ""
               } md:text-base`}
             >
@@ -72,13 +72,13 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
             </button>
           </li>
           <li className="flex flex-col items-start font-medium">
-            <span className="hidden text-sm uppercase text-sidebar-pas md:flex">
+            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
               pasul 4
             </span>
             <button
               tabIndex={0}
               onClick={() => goTo(3)}
-              className={`text-sm ${
+              className={`text-sm font-bold ${
                 currentStepIndex === 3 ? "text-[#805239]" : ""
               } md:text-base`}
             >
@@ -92,13 +92,13 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
             </button>
           </li>
           <li className="flex flex-col items-start font-medium">
-            <span className="hidden text-sm uppercase text-sidebar-pas md:flex">
+            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
               pasul 5
             </span>
             <button
               tabIndex={0}
               onClick={() => goTo(4)}
-              className={`text-sm ${
+              className={`text-sm font-bold ${
                 currentStepIndex === 4 ? "text-[#C6CCCA]" : ""
               } md:text-base`}
             >

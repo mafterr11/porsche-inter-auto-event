@@ -10,6 +10,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-ubuntu)'],
+        futura: ['Futura', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

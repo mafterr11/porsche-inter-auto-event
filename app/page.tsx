@@ -283,7 +283,7 @@ export default function Home() {
                       isFirstStep
                         ? "invisible"
                         : "visible p-0 text-neutral-200 hover:text-white"
-                    }`}
+                    } font-bold`}
                   >
                     Înapoi
                   </Button>
@@ -292,7 +292,7 @@ export default function Home() {
                   <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
                     <Button
                       type="submit"
-                      className="bg-background-accent relative rounded-xl border border-black/20 text-neutral-200 shadow-input shadow-black/10 hover:text-white"
+                      className="bg-background-accent relative rounded-xl border border-black/20 text-neutral-200 shadow-input shadow-black/10 hover:text-white font-bold"
                     >
                       {isLastStep ? "Trimite" : "Următorul pas"}
                     </Button>
