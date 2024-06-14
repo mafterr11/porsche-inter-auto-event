@@ -22,7 +22,7 @@ export type FormItems = {
   email: string;
   phone: string;
   message: string;
-  marca: "Audi" | "Volkswagen" | "Skoda" | "Seat" | "Cupra";
+  marca: "Audi" | "Volkswagen" | "Skoda" | "Seat" | "Cupra" | "";
   selectedLocation?: number;
   carCondition?: string;
   carModel?: string;

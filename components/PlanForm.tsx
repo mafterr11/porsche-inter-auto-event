@@ -13,7 +13,7 @@ type stepProps = FormItems & {
   nextStep: () => void; // Add nextStep to props
 };
 
-type Plan = "Audi" | "Volkswagen" | "Skoda" | "Seat" | "Cupra";
+type Plan = "Audi" | "Volkswagen" | "Skoda" | "Seat" | "Cupra" | "";
 
 const PlanForm = ({ updateForm, marca, nextStep }: stepProps) => {
   const [planSelected, setPlanSelected] = useState<Plan>(marca);

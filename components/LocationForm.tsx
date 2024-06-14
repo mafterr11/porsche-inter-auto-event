@@ -40,7 +40,7 @@ const LocationForm = ({
                 ? // #6185C1
                   "border-[#002E7A] bg-background-accent"
                 : "border-neutral-600"
-            } hover:border-[#002E7A]`}
+            } hover:border-[#002E7A] hover:bg-background-accent`}
             key={location.id}
             onClick={() => handleLocationChange(location.id)}
           >
