@@ -28,7 +28,7 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
                 } h-10 w-10 rounded-full border-2 md:text-base xl:h-12 xl:w-12`}
               >
                 <span
-                  className={`${currentStepIndex === index ? "scale-[1.3]" : ""} transition-all duration-500 ease-in-out`}
+                  className={`${currentStepIndex === index ? "scale-[1.3] opacity-100" : "opacity-0"} transition-all duration-500 ease-in-out`}
                 >
                   {index + 1}
                 </span>
