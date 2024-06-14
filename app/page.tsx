@@ -217,7 +217,7 @@ export default function Home() {
           ""
         )}
         <main
-          className={`${showSuccessMsg ? "w-full" : "mt-24 w-full md:mt-5 md:w-[65%]"}`}
+          className={`${showSuccessMsg ? "w-full" : "mt-16 w-full md:mt-5 md:w-[65%]"}`}
         >
           {showSuccessMsg ? (
             <AnimatePresence mode="wait">

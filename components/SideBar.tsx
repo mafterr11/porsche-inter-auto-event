@@ -7,111 +7,32 @@ type NavProps = {
 
 const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
   return (
-    <div className="absolute -top-8 left-0 w-full md:relative md:top-0 md:left-0 md:w-[25%]">
+    <div className="absolute -top-8 left-0 w-full md:relative md:top-0 md:left-0 md:w-[15%]">
       <nav className="h-full rounded-md border border-neutral-700 bg-background-accent py-5 text-slate-200 md:p-5">
-        <ul className="flex flex-wrap justify-center gap-8 md:flex-col">
-          <li className="flex flex-col items-start font-medium">
-            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
-              pasul 1
-            </span>
-            <button
-              tabIndex={0}
-              onClick={() => goTo(0)}
-              className={`text-sm font-bold ${
-                currentStepIndex === 0 ? "text-[#E40001]" : ""
-              } md:text-base`}
-            >
-              <RoughNotation
-                type="underline"
-                show={currentStepIndex === 0}
-                color="#E40001"
+        <ul className="flex flex-wrap justify-center md:flex-col md:items-center">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <li key={index} className="flex items-center md:flex-col md:items-center justify-center">
+              {index > 0 && (
+                <div className="hidden md:block w-1 h-[4rem] bg-slate-400" />
+              )}
+              <button
+                tabIndex={0}
+                onClick={() => goTo(index)}
+                className={`flex items-center justify-center font-bold text-sm uppercase text-sidebar-pas transition-all ease-in-out duration-500 ${
+                  currentStepIndex === index ? "scale-[1.15]" : ""
+                } md:text-base w-10 h-10 xl:h-12 xl:w-12 rounded-full border-2 ${
+                  currentStepIndex === index
+                    ? "border-electric-green"
+                    : "border-slate-400"
+                }`}
               >
-                Selectați marca
-              </RoughNotation>
-            </button>
-          </li>
-          <li className="flex flex-col items-start font-medium">
-            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
-              pasul 2
-            </span>
-            <button
-              tabIndex={0}
-              onClick={() => goTo(1)}
-              className={`text-sm font-bold ${
-                currentStepIndex === 1 ? "text-[#073787]" : ""
-              } md:text-base`}
-            >
-              <RoughNotation
-                type="underline"
-                show={currentStepIndex === 1}
-                color="#073787"
-              >
-                Locația
-              </RoughNotation>
-            </button>
-          </li>
-          <li className="flex flex-col items-start font-medium">
-            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
-              pasul 3
-            </span>
-            <button
-              tabIndex={0}
-              onClick={() => goTo(2)}
-              // #78FAAE - Electric green
-              // #0E3A2F - Emerald green
-              className={`text-sm font-bold ${
-                currentStepIndex === 2 ? "text-[#78FAAE]" : ""
-              } md:text-base`}
-            >
-              <RoughNotation
-                type="underline"
-                show={currentStepIndex === 2}
-                color="#78FAAE"
-              >
-                Tipul mașinii
-              </RoughNotation>
-            </button>
-          </li>
-          <li className="flex flex-col items-start font-medium">
-            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
-              pasul 4
-            </span>
-            <button
-              tabIndex={0}
-              onClick={() => goTo(3)}
-              className={`text-sm font-bold ${
-                currentStepIndex === 3 ? "text-[#805239]" : ""
-              } md:text-base`}
-            >
-              <RoughNotation
-                type="underline"
-                show={currentStepIndex === 3}
-                color="#805239"
-              >
-                Modelul mașinii
-              </RoughNotation>
-            </button>
-          </li>
-          <li className="flex flex-col items-start font-medium">
-            <span className="hidden font-bold text-sm uppercase text-sidebar-pas md:flex">
-              pasul 5
-            </span>
-            <button
-              tabIndex={0}
-              onClick={() => goTo(4)}
-              className={`text-sm font-bold ${
-                currentStepIndex === 4 ? "text-[#C6CCCA]" : ""
-              } md:text-base`}
-            >
-              <RoughNotation
-                type="underline"
-                show={currentStepIndex === 4}
-                color="#C6CCCA"
-              >
-                Date personale
-              </RoughNotation>
-            </button>
-          </li>
+                <span className={`${ currentStepIndex === index ? "scale-[1.3]" : ""} transition-all ease-in-out duration-500`}>{index + 1}</span>
+              </button>
+              {index < 4 && (
+                <div className="block md:hidden w-8 h-1 bg-slate-400" />
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
