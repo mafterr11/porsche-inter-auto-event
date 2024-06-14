@@ -210,7 +210,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-[40%] md:max-xl:w-[80%] max-w-4xl md:h-[640px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-screen xs:max-md:h-[90vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[80vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] md:max-xl:w-[80%] max-w-4xl md:h-[640px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[87vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[65vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -218,7 +218,7 @@ export default function Home() {
           ""
         )}
         <main
-          className={`${showSuccessMsg ? "w-full" : "mt-16 w-full md:mt-5 md:w-[65%]"} xl:pr-6`}
+          className={`${showSuccessMsg ? "w-full" : "mt-12 w-full md:mt-5 md:w-[65%]"} xl:pr-6`}
         >
           {showSuccessMsg ? (
             <AnimatePresence mode="wait">
