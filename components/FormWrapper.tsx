@@ -38,7 +38,7 @@ const FormWrapper = ({ title, description, children }: FormWrapperProps) => {
         <h2 className="text-xl font-semibold text-white md:text-2xl">
           {title}
         </h2>
-        <p className="text-sm text-neutral-300 md:text-base">{description}</p>
+        <p className="text-base text-neutral-300">{description}</p>
       </div>
       {children}
     </motion.div>
