@@ -36,7 +36,7 @@ const initialValues: FormItems = {
   message: "",
   marca: "Audi",
   selectedLocation: 1,
-  carCondition: "Mașină nouă",
+  carCondition: "",
   carModel: "",
   acceptTerms: false, // Initial value for acceptTerms
 };
@@ -52,6 +52,7 @@ export default function Home() {
     currentStepIndex,
     isFirstStep,
     isLastStep,
+    isFormStep,
     steps,
     goTo,
     showSuccessMsg,
@@ -209,7 +210,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-11/12 max-w-4xl md:h-[570px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-screen xs:max-md:h-[90vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[80vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[640px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-screen xs:max-md:h-[90vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[80vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -217,7 +218,7 @@ export default function Home() {
           ""
         )}
         <main
-          className={`${showSuccessMsg ? "w-full" : "mt-16 w-full md:mt-5 md:w-[65%]"}`}
+          className={`${showSuccessMsg ? "w-full" : "mt-16 w-full md:mt-5 md:w-[65%]"} xl:pr-6`}
         >
           {showSuccessMsg ? (
             <AnimatePresence mode="wait">
@@ -296,7 +297,13 @@ export default function Home() {
                   </Button>
                 </div>
                 <div className="flex items-center">
-                  <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
+                  <div
+                    className={`${
+                      isFormStep || isLastStep
+                        ? "visible"
+                        : "invisible"
+                    } relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]`}
+                  >
                     <Button
                       type="submit"
                       className="relative rounded-xl border border-black/20 bg-background-accent font-bold text-neutral-200 shadow-input shadow-black/10 hover:text-white"

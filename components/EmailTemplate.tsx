@@ -1,6 +1,5 @@
 import {
   Body,
-  Column,
   Container,
   Head,
   Heading,
@@ -8,7 +7,6 @@ import {
   Html,
   Img,
   Preview,
-  Row,
   Section,
   Text,
 } from "@react-email/components";
@@ -47,8 +45,8 @@ const EmailTemplate = ({
           <Section style={global.defaultPadding}>
             <Img
               src={`${baseUrl}/logo.jpg`}
-              width="65"
-              height="73"
+              width="100"
+              height="100"
               alt="delivery snake"
               style={{ margin: "auto" }}
             />
@@ -64,6 +62,10 @@ const EmailTemplate = ({
           <Hr style={global.hr} />
           <Section style={global.defaultPadding}>
             <Text style={{ ...global.text }}>Marcă: {marca}</Text>
+            <Text style={{ ...global.text }}>Model mașină: {carModel}</Text>
+            <Text style={{ ...global.text }}>
+              Condiție mașină: {carCondition}
+            </Text>
             <Text style={{ ...global.text, marginTop: 4 }}>
               {" "}
               Locație selectată:{" "}
@@ -71,10 +73,6 @@ const EmailTemplate = ({
                 ? "Porsche Pipera"
                 : "Porsche București Vest 2"}
             </Text>
-            <Text style={{ ...global.text }}>
-              Condiție mașină: {carCondition}
-            </Text>
-            <Text style={{ ...global.text }}>Model mașină: {carModel}</Text>
           </Section>
           <Hr style={global.hr} />
           <Section style={global.defaultPadding}>
