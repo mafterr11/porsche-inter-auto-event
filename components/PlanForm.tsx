@@ -10,17 +10,19 @@ import Image from "next/image";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
+  nextStep: () => void; // Add nextStep to props
 };
 
 type Plan = "Audi" | "Volkswagen" | "Skoda" | "Seat" | "Cupra";
 
-const PlanForm = ({ updateForm, marca }: stepProps) => {
+const PlanForm = ({ updateForm, marca, nextStep }: stepProps) => {
   const [planSelected, setPlanSelected] = useState<Plan>(marca);
 
   const handleValueChange = (planSelected: Plan) => {
     if (planSelected) {
       setPlanSelected(planSelected);
       updateForm({ marca: planSelected });
+      nextStep(); // Move to next step
     }
   };
 

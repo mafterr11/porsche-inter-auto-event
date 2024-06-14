@@ -5,6 +5,7 @@ import FormWrapper from "./FormWrapper";
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
   errors: Record<string, string>;
+  nextStep: () => void; // Add nextStep to props
 };
 
 const carModels = {
@@ -61,7 +62,12 @@ const carModelImages: Record<string, string> = {
   Tarraco: "/modele/seat/tarraco.png",
 };
 
-const CarSelectionForm = ({ marca, carModel, updateForm }: stepProps) => {
+const CarSelectionForm = ({
+  marca,
+  carModel,
+  updateForm,
+  nextStep,
+}: stepProps) => {
   const [selectedModel, setSelectedModel] = useState<string>(carModel || "");
 
   useEffect(() => {
@@ -73,6 +79,7 @@ const CarSelectionForm = ({ marca, carModel, updateForm }: stepProps) => {
   const handleModelChange = (model: string) => {
     setSelectedModel(model);
     updateForm({ carModel: model });
+    nextStep(); // Move to next step
   };
 
   return (

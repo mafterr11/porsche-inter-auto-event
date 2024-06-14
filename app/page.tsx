@@ -209,7 +209,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-11/12 max-w-4xl md:h-[570px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-screen xs:max-md:h-[90vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[80vh]" : ""}  justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-11/12 max-w-4xl md:h-[570px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-screen xs:max-md:h-[90vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[80vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -230,7 +230,12 @@ export default function Home() {
             >
               <AnimatePresence mode="wait">
                 {currentStepIndex === 0 && (
-                  <PlanForm key="step1" {...formData} updateForm={updateForm} />
+                  <PlanForm
+                    key="step1"
+                    {...formData}
+                    updateForm={updateForm}
+                    nextStep={nextStep}
+                  />
                 )}
                 {currentStepIndex === 1 && (
                   <LocationForm
@@ -238,6 +243,7 @@ export default function Home() {
                     {...formData}
                     updateForm={updateForm}
                     selectedLocation={formData.selectedLocation}
+                    nextStep={nextStep}
                   />
                 )}
                 {currentStepIndex === 2 && (
@@ -253,6 +259,7 @@ export default function Home() {
                     key="step4"
                     {...formData}
                     updateForm={updateForm}
+                    nextStep={nextStep}
                     errors={errors}
                   />
                 )}
@@ -292,7 +299,7 @@ export default function Home() {
                   <div className="relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]">
                     <Button
                       type="submit"
-                      className="bg-background-accent relative rounded-xl border border-black/20 text-neutral-200 shadow-input shadow-black/10 hover:text-white font-bold"
+                      className="relative rounded-xl border border-black/20 bg-background-accent font-bold text-neutral-200 shadow-input shadow-black/10 hover:text-white"
                     >
                       {isLastStep ? "Trimite" : "Următorul pas"}
                     </Button>

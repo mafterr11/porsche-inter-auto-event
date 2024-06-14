@@ -4,6 +4,7 @@ import FormWrapper from "./FormWrapper";
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
   selectedLocation?: number; // Ensure this prop is included
+  nextStep: () => void; // Add nextStep to props
 };
 
 const locations = [
@@ -19,9 +20,14 @@ const locations = [
   },
 ];
 
-const LocationForm = ({ updateForm, selectedLocation }: stepProps) => {
+const LocationForm = ({
+  updateForm,
+  selectedLocation,
+  nextStep,
+}: stepProps) => {
   const handleLocationChange = (selectedId: number) => {
     updateForm({ selectedLocation: selectedId });
+    nextStep(); // Move to next step
   };
 
   return (

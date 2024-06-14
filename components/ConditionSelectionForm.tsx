@@ -20,13 +20,7 @@ const ConditionSelectionForm = ({
   const handleConditionChange = (condition: string) => {
     setSelectedCondition(condition);
     updateForm({ carCondition: condition });
-  };
-
-  const handleNextStep = () => {
-    if (selectedCondition) {
-      updateForm({ carCondition: selectedCondition });
-      nextStep();
-    }
+    nextStep(); // Move to next step
   };
 
   return (
