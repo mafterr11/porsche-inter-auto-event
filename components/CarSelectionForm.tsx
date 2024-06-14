@@ -93,7 +93,7 @@ const CarSelectionForm = ({
           {carModels[marca].map((model) => (
             <div
               key={model}
-              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 transition-all duration-500 ease-in-out active:scale-[0.98] ${
+              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 transition-all duration-500 ease-in-out active:scale-[0.95] ${
                 selectedModel === model
                   ? "border-[#805239] bg-background-accent"
                   : "border-neutral-600 hover:border-[#805239]"
