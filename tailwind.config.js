@@ -35,7 +35,7 @@ module.exports = {
           accent: "#171717",
       },
       sidebar: {
-        pas: "#737373"
+        pas: "#878E9B"
       }
       },
       backgroundImage: {

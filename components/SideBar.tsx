@@ -57,15 +57,16 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
             <button
               tabIndex={0}
               onClick={() => goTo(2)}
-              // #48A82E
+              // #78FAAE - Electric green
+              // #0E3A2F - Emerald green
               className={`text-sm font-bold ${
-                currentStepIndex === 2 ? "text-[#196350]" : ""
+                currentStepIndex === 2 ? "text-[#78FAAE]" : ""
               } md:text-base`}
             >
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 2}
-                color="#196350"
+                color="#78FAAE"
               >
                 Tipul mașinii
               </RoughNotation>

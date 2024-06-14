@@ -12,7 +12,7 @@ const Header = () => {
           sizes="(max-width: 768px) 100vw, 24rem" // Add the sizes prop
         />
       </div>
-      <h1 className="text-4xl">Porsche Inter Auto</h1>
+      <h1 className="text-4xl font-bold">Porsche Inter Auto</h1>
     </div>
   );
 };
