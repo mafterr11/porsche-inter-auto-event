@@ -209,7 +209,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-11/12 max-w-4xl md:h-[570px] ${currentStepIndex === 4 ? "h-screen" : ""} h-screen justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full xs:max-md:h-[90vh]`}
+        className={`relative m-1 mx-auto flex w-11/12 max-w-4xl md:h-[570px] ${currentStepIndex === 3 || currentStepIndex === 4 ? "h-screen xs:max-md:h-[90vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[80vh]" : ""}  justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
