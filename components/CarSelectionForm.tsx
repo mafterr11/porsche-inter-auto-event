@@ -27,6 +27,7 @@ const carModels = {
   Skoda: ["Fabia", "Scala", "Octavia", "Superb", "Karoq", "Kodiaq"],
   Seat: ["Ibiza", "Leon", "Ateca", "Tarraco"],
   Cupra: ["Ibiza", "Leon", "Ateca", "Tarraco"],
+  "": [],
 };
 
 const carModelImages: Record<string, string> = {
@@ -92,7 +93,7 @@ const CarSelectionForm = ({
           {carModels[marca].map((model) => (
             <div
               key={model}
-              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 ${
+              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 p-3 transition-all duration-500 ease-in-out active:scale-[0.98] ${
                 selectedModel === model
                   ? "border-[#805239] bg-background-accent"
                   : "border-neutral-600 hover:border-[#805239]"

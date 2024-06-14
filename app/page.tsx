@@ -34,7 +34,7 @@ const initialValues: FormItems = {
   email: "",
   phone: "",
   message: "",
-  marca: "Audi",
+  marca: "",
   selectedLocation: 1,
   carCondition: "",
   carModel: "",
