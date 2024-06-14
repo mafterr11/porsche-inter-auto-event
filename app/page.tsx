@@ -302,7 +302,7 @@ export default function Home() {
                       isFormStep || isLastStep
                         ? "visible"
                         : "invisible"
-                    } relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition hover:scale-[1.05] active:scale-[0.95]`}
+                    } relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition active:scale-[0.95]`}
                   >
                     <Button
                       type="submit"
