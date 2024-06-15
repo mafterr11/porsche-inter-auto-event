@@ -178,7 +178,7 @@ export default function Home() {
     if (currentStepIndex === 4 && !formData.acceptTerms) {
       toast({
         title: "Acceptați termenii și condițiile!",
-        description: "Trebuie să acceptați prelucrarea datelor GDPR.",
+        description: "Vă rugăm să acceptați prelucrarea datelor GDPR",
         variant: "destructive",
       });
       setErrors((prevState) => ({
