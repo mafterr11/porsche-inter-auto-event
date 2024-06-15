@@ -6,8 +6,8 @@ type NavProps = {
 
 const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
   return (
-    <div className="absolute -top-8 left-0 w-full md:relative md:top-0 md:left-0 md:w-[20%]">
-      <nav className="h-full xl:flex items-center justify-center rounded-md border border-[#717C9B] bg-background-accent py-5 md:p-5">
+    <div className="absolute -top-[2.35rem] left-0 w-full md:relative md:top-0 md:left-0 md:w-[20%]">
+      <nav className="h-full xl:flex items-center justify-center  border border-[#717C9B] bg-background-accent py-5 md:p-5">
         <ul className="flex flex-wrap justify-center md:flex-col md:items-center pointer-events-none">
           {Array.from({ length: 5 }).map((_, index) => (
             <li
