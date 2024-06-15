@@ -9,6 +9,7 @@ const Header = () => {
           src="/logo.png"
           fill
           alt="logo"
+          priority
           sizes="(max-width: 768px) 100vw, 24rem" // Add the sizes prop
         />
       </div>

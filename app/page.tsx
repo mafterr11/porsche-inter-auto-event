@@ -213,7 +213,7 @@ export default function Home() {
         className={`relative m-1 mx-auto flex w-[40%] md:max-xl:w-[80%] max-w-4xl md:h-[640px] ${currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[95vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[65vh]" : ""} ${currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
-          <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
+          <SideBar currentStepIndex={currentStepIndex} goTo={goTo} isLastStep={isLastStep} />
         ) : (
           ""
         )}
