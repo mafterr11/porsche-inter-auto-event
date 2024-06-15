@@ -20,7 +20,7 @@ const SuccessMessage = () => {
       <p className="text-neutral-300">Ați transmis informațiile cu succes</p>
       <button
         onClick={handleRestart}
-        className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+        className="mt-4 rounded-md bg-[#384967] px-4 py-2 text-white hover:bg-[#384967]/80 f"
       >
         Acasă
       </button>

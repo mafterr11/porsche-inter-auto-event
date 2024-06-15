@@ -8,7 +8,7 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
   return (
     <div className="absolute -top-8 left-0 w-full md:relative md:top-0 md:left-0 md:w-[15%]">
       <nav className="h-full xl:flex items-center justify-center rounded-md border border-neutral-700 bg-background-accent py-5 text-slate-200 md:p-5">
-        <ul className="flex flex-wrap justify-center md:flex-col md:items-center">
+        <ul className="flex flex-wrap justify-center md:flex-col md:items-center pointer-events-none">
           {Array.from({ length: 5 }).map((_, index) => (
             <li
               key={index}
