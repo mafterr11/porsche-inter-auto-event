@@ -210,10 +210,14 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-[40%] md:max-xl:w-[80%] max-w-4xl md:h-[640px] ${currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[95vh]" : currentStepIndex === 0 || 1 || 2 ? "h-[65vh]" : ""} ${currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : ""} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[640px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[95vh]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
-          <SideBar currentStepIndex={currentStepIndex} goTo={goTo} isLastStep={isLastStep} />
+          <SideBar
+            currentStepIndex={currentStepIndex}
+            goTo={goTo}
+            isLastStep={isLastStep}
+          />
         ) : (
           ""
         )}
@@ -273,11 +277,7 @@ export default function Home() {
                   />
                 )}
                 {currentStepIndex === 5 && (
-                  <FinalStep
-                    key="step6"
-                    {...formData}
-                    goTo={goTo}
-                  />
+                  <FinalStep key="step6" {...formData} goTo={goTo} />
                 )}
               </AnimatePresence>
               <div className="flex w-full items-center justify-between px-1">
@@ -289,7 +289,7 @@ export default function Home() {
                     className={`${
                       isFirstStep
                         ? "invisible"
-                        : "visible p-0 text-neutral-800 hover:text-neutral-700 hover:scale-[1.1]"
+                        : "visible p-0 text-neutral-800 hover:scale-[1.1] hover:text-neutral-700"
                     } font-bold`}
                   >
                     Înapoi
@@ -298,14 +298,12 @@ export default function Home() {
                 <div className="flex items-center">
                   <div
                     className={`${
-                      isFormStep || isLastStep
-                        ? "visible"
-                        : "invisible"
+                      isFormStep || isLastStep ? "visible" : "invisible"
                     } relative transition-all duration-300 ease-in-out after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-highlight after:shadow-white/10 after:transition active:scale-[0.95]`}
                   >
                     <Button
                       type="submit"
-                      className="relative rounded-xl border border-black/20 bg-[#384967] hover:bg-[#384967]/80 font-bold text-white shadow-input shadow-black/10 hover:text-white"
+                      className="relative rounded-xl border border-black/20 bg-[#384967] font-bold text-white shadow-input shadow-black/10 hover:bg-[#384967]/80 hover:text-white"
                     >
                       {isLastStep ? "Trimite" : "Următorul pas"}
                     </Button>
