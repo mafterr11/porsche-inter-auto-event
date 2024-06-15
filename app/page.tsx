@@ -277,7 +277,6 @@ export default function Home() {
                     key="step6"
                     {...formData}
                     goTo={goTo}
-                    onSubmit={handleOnSubmit} // Ensure no arguments are passed
                   />
                 )}
               </AnimatePresence>
