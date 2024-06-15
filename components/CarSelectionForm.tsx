@@ -93,7 +93,7 @@ const CarSelectionForm = ({
           {carModels[marca].map((model) => (
             <div
               key={model}
-              className={`flex cursor-pointer flex-col items-center justify-center rounded-md border-2 border-neutral-400 bg-background-accent p-3 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
+              className={`flex cursor-pointer flex-col items-center justify-center rounded-md  bg-background-accent p-3 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
               onClick={() => handleModelChange(model)}
             >
               <img

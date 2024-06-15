@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`font-futura relative overflow-x-hidden bg-bg bg-cover bg-center bg-no-repeat text-neutral-200 lg:max-xl:h-full`}
+      className={`font-futura relative overflow-x-hidden bg-[#384967] text-neutral-200 lg:max-xl:h-full`}
     >
       <body className="relative h-full w-full overflow-x-hidden">
         <div className="absolute inset-0 h-full bg-black/40" />

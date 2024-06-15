@@ -32,14 +32,14 @@ const ConditionSelectionForm = ({
         <div className="flex gap-3">
           <button
             type="button"
-            className={`cursor-pointer rounded-md border border-neutral-400 bg-background-accent p-3 text-neutral-800 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
+            className={`cursor-pointer rounded-md  bg-background-accent p-3 text-neutral-800 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
             onClick={() => handleConditionChange("Mașină nouă")}
           >
             Nouă
           </button>
           <button
             type="button"
-            className={`cursor-pointer rounded-md border border-neutral-400 bg-background-accent p-3 text-neutral-800 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
+            className={`cursor-pointer rounded-md  bg-background-accent p-3 text-neutral-800 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
             onClick={() => handleConditionChange("Mașină rulată")}
           >
             Rulată

@@ -35,7 +35,7 @@ const LocationForm = ({
       <div className="flex flex-col gap-3">
         {locations.map((location) => (
           <div
-            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md border border-neutral-400 bg-background-accent p-3 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
+            className={`flex w-fit cursor-pointer flex-col gap-1 rounded-md  bg-background-accent p-3 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
             key={location.id}
             onClick={() => handleLocationChange(location.id)}
           >

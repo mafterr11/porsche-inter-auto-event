@@ -42,7 +42,7 @@ const PlanForm = ({ updateForm, marca, nextStep }: stepProps) => {
           <ToggleGroup.Item
             key={brand}
             value={brand}
-            className={`relative flex min-h-[100px] min-w-[100px] items-center justify-center rounded-md border border-neutral-400 bg-background-accent  p-2 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95] xs:min-h-[115px] xs:min-w-[115px] xl:min-h-[140px]`}
+            className={`relative flex min-h-[100px] min-w-[100px] items-center justify-center rounded-md  bg-background-accent  p-2 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95] xs:min-h-[115px] xs:min-w-[115px] xl:min-h-[140px]`}
           >
             <Image
               src={`/${brand.toLowerCase()}.png`}
