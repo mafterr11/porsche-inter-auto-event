@@ -1,5 +1,3 @@
-import { RoughNotation } from "react-rough-notation";
-
 type NavProps = {
   currentStepIndex: number;
   goTo: (index: number) => void;
