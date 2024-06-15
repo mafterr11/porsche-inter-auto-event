@@ -21,11 +21,11 @@ const SuccessMessage = () => {
           colors: ["#002E7A", "#805239", "#78FAAE", "#000"],
         }}
       />
-      <h2 className="text-2xl font-semibold text-white">Succes!</h2>
-      <p className="text-neutral-300">Ați transmis informațiile cu succes</p>
+      <h2 className="text-2xl font-semibold text-neutral-900">Succes!</h2>
+      <p className="text-neutral-800">Ați transmis informațiile cu succes</p>
       <button
         onClick={handleRestart}
-        className="f mt-4 rounded-md bg-[#384967] px-4 py-2 text-white hover:bg-[#384967]/80"
+        className="f mt-4 rounded-md bg-[#384967] px-4 py-2 text-white  hover:bg-[#384967]/80"
       >
         Acasă
       </button>

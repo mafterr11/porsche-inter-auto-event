@@ -23,7 +23,7 @@ const UserInfoForm = ({
       title="Informații personale"
       description="Vă rugăm să introduceți numele, adresa de email și numărul de telefon."
     >
-      <div className="flex w-full flex-col gap-5 xs:max-md:space-y-4">
+      <div className="flex w-full flex-col gap-5 xs:max-md:space-y-4 text-neutral-800">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Nume</Label>
           <Input

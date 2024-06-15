@@ -107,3 +107,7 @@
 .scrollable-container {
   -webkit-overflow-scrolling: touch;
 }
+
+.scrollable-container::-webkit-scrollbar {
+  display: none;
+}

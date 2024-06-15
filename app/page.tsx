@@ -289,7 +289,7 @@ export default function Home() {
                     className={`${
                       isFirstStep
                         ? "invisible"
-                        : "visible p-0 text-neutral-200 hover:text-white"
+                        : "visible p-0 text-neutral-800 hover:text-neutral-700 hover:scale-[1.1]"
                     } font-bold`}
                   >
                     Înapoi
@@ -305,7 +305,7 @@ export default function Home() {
                   >
                     <Button
                       type="submit"
-                      className="relative rounded-xl border border-black/20 bg-background-accent font-bold text-neutral-200 shadow-input shadow-black/10 hover:text-white"
+                      className="relative rounded-xl border border-black/20 bg-[#384967] hover:bg-[#384967]/80 font-bold text-white shadow-input shadow-black/10 hover:text-white"
                     >
                       {isLastStep ? "Trimite" : "Următorul pas"}
                     </Button>

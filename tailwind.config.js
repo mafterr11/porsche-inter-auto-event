@@ -31,11 +31,12 @@ module.exports = {
           750: '#313131'
         },
         background: {
-          DEFAULT: "#262626",
-          accent: "#171717",
+          DEFAULT: "#FFFFFF",
+          accent: "#F3F4F6",
+          accentClick: "#E5E7EB",
       },
       sidebar: {
-        pas: "#878E9B"
+        pas: "#2C486E"
       }
       },
       backgroundImage: {

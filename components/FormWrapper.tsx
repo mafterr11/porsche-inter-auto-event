@@ -35,10 +35,10 @@ const FormWrapper = ({ title, description, children }: FormWrapperProps) => {
       exit="exit"
     >
       <div className="flex flex-col gap-1">
-        <h2 className="text-xl font-semibold text-white md:text-2xl">
+        <h2 className="text-xl font-semibold text-black md:text-2xl">
           {title}
         </h2>
-        <p className="text-base text-neutral-300">{description}</p>
+        <p className="text-base text-neutral-800">{description}</p>
       </div>
       {children}
     </motion.div>
