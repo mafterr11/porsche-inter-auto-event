@@ -201,7 +201,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-full flex-col-reverse items-center justify-center gap-y-8 pt-8 xl:mt-0 xl:flex-col xl:pb-20">
+    <div className="flex h-full flex-col items-center justify-center gap-y-8 pt-6 xl:mt-0 xl:flex-col xl:pb-20">
       {/* Header */}
       <Header />
       {/* Main content */}

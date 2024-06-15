@@ -17,7 +17,6 @@ export default function RootLayout({
       className={`font-futura relative overflow-x-hidden bg-[#384967] text-neutral-200 lg:max-xl:h-full`}
     >
       <body className="relative h-full w-full overflow-x-hidden">
-        <div className="absolute inset-0 h-full bg-black/40" />
         <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
         <Footer />
         <Toaster />
