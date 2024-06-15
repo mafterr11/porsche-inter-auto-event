@@ -79,7 +79,6 @@ const UserInfoForm = ({
             placeholder="Scrieți mesajul aici!"
             className="w-full"
             onChange={(e) => updateForm({ message: e.target.value })}
-            required
           />
         </div>
         <div className="flex items-center gap-2">

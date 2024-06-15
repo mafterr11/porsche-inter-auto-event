@@ -102,11 +102,7 @@ export default function Home() {
       }));
     }
 
-    if (message && message.trim().length < 0) {
-      setErrors((prevState) => ({
-        ...prevState,
-      }));
-    } else if (message && message.trim().length > 150) {
+    if (message && message.trim().length > 150) {
       setErrors((prevState) => ({
         ...prevState,
         message: "Mesajul nu trebuie să depășească 150 de caractere",
@@ -117,6 +113,7 @@ export default function Home() {
         message: "",
       }));
     }
+    
 
     if (acceptTerms !== undefined) {
       if (!acceptTerms) {
@@ -126,7 +123,6 @@ export default function Home() {
       } else {
         setErrors((prevState) => ({
           ...prevState,
-          acceptTerms: "",
         }));
       }
     }
@@ -210,7 +206,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[640px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[95vh]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[640px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[95vh]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5  ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar

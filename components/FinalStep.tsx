@@ -13,6 +13,11 @@ const FinalStep = ({
   message,
   goTo,
 }: FinalStepProps) => {
+
+  const handleRestart = () => {
+    window.location.reload(); // This will refresh the page
+  };
+
   return (
     <div className="flex flex-col gap-3 max-md:text-center text-neutral-900">
       <h2 className="text-xl font-semibold">Verificați detaliile</h2>
@@ -22,9 +27,9 @@ const FinalStep = ({
       <p><span className="font-bold">Mesaj:</span> {message}</p>
       <button
         className="mx-auto mt-4 max-w-[200px] rounded-md bg-[#384967] p-2 text-white xl:mx-0"
-        onClick={() => goTo(4)}  // Set index to 4 for UserInfoForm
+        onClick={handleRestart}  // Set index to 4 for UserInfoForm
       >
-        Editați detaliile
+        Începeți din nou
       </button>
     </div>
   );
