@@ -26,11 +26,11 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
               <button
                 tabIndex={0}
                 onClick={() => goTo(index)}
-                className={`flex items-center justify-center text-sm font-bold uppercase text-sidebar-pas transition-all duration-500 ease-in-out ${
+                className={`flex items-center justify-center text-sm font-bold uppercase text-whitetransition-all duration-500 ease-in-out ${
                   currentStepIndex >= index
-                    ? "scale-[1.08] border-[#717C9B] bg-background-accentClick"
+                    ? "scale-[1.08] border-[#717C9B] bg-[#969EB7]/80"
                     : "border-[#969EB7]"
-                } h-10 w-10 rounded-full border-2 md:text-base xl:h-12 xl:w-12`}
+                } h-10 w-10 rounded-full border-[3px] md:text-base xl:h-12 xl:w-12`}
               >
                 <span
                   className={`${
