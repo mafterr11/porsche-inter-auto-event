@@ -9,7 +9,7 @@ type NavProps = {
 const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
   return (
     <div className="absolute -top-[2.35rem] left-0 w-full md:relative md:top-0 md:left-0 md:w-[20%]">
-      <nav className="h-full items-center justify-center rounded-t-lg border border-[#506183] bg-background-accent py-5 md:p-5 xl:flex">
+      <nav className="h-full items-center justify-center rounded-t-lg border border-[#717C9B] bg-background-accent py-5 md:p-5 xl:flex">
         <ul className="pointer-events-none flex flex-wrap justify-center md:flex-col md:items-center">
           {Array.from({ length: 5 }).map((_, index) => (
             <li
@@ -19,16 +19,16 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
               {index > 0 && (
                 <div
                   className={`hidden h-[4rem] w-1 transition-all duration-500 ease-in-out md:block ${
-                    currentStepIndex >= index ? "bg-[#506183]" : "bg-[#969EB7]"
+                    currentStepIndex >= index ? "bg-[#717C9B]" : "bg-[#969EB7]"
                   }`}
                 />
               )}
               <button
                 tabIndex={0}
                 onClick={() => goTo(index)}
-                className={`flex items-center justify-center text-sm font-bold uppercase text-[#506183] transition-all duration-500 ease-in-out ${
+                className={`flex items-center justify-center text-sm font-bold uppercase text-sidebar-pas transition-all duration-500 ease-in-out ${
                   currentStepIndex >= index
-                    ? "scale-[1.08] border-[#506183] bg-background-accentClick/60"
+                    ? "scale-[1.08] border-[#717C9B] bg-background-accentClick/60"
                     : "border-[#969EB7]"
                 } h-10 w-10 rounded-full border-[3px] md:text-base xl:h-12 xl:w-12`}
               >
@@ -45,7 +45,7 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
               {index < 4 && (
                 <div
                   className={`block h-1 w-8 transition-all duration-500 ease-in-out md:hidden ${
-                    currentStepIndex > index ? "bg-[#506183]" : "bg-[#969EB7]"
+                    currentStepIndex > index ? "bg-[#717C9B]" : "bg-[#969EB7]"
                   }`}
                 />
               )}
