@@ -46,6 +46,7 @@ export default function RootLayout({
           />
         </noscript>
         {/* TikTok Pixel */}
+        {/* TODO issue with this script (https not secure, SSL?) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
