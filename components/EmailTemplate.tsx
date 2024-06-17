@@ -1,7 +1,6 @@
-import * as React from "react";
-
 const EmailTemplate = ({
   name,
+  surname,
   email,
   phone,
   message,
@@ -9,9 +8,11 @@ const EmailTemplate = ({
   selectedLocation,
   carCondition,
   carModel,
-  acceptTerms
+  acceptTerms,
+  contactMethod,
 }: {
   name: string;
+  surname: string;
   email: string;
   phone: number;
   message: string;
@@ -20,29 +21,24 @@ const EmailTemplate = ({
   carCondition: string;
   carModel: string;
   acceptTerms: boolean;
+  contactMethod: string;
 }) => {
-  const emailContent = `
+  return `
 Sursa: Event
 Marca: ${marca}
 Dealer: ${selectedLocation}
 Tip: Vanzari
 Model: ${carModel}
 Tip masina: ${carCondition}
-Eveniment: 17-22 Iunie
+Eveniment: 1722 Iunie
 Telefon: ${phone}
 Email: ${email}
 Prenume: ${name}
-Nume: ${name}
+Nume: ${surname}
 Message: ${message}
-Contact Method: Email / Telefon
+Contact Method: ${contactMethod}
 Consent: ${acceptTerms ? "Yes" : "No"}
-`;
-
-  return (
-    <pre>
-      {emailContent}
-    </pre>
-  );
+  `;
 };
 
 export default EmailTemplate;

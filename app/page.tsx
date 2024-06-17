@@ -19,6 +19,7 @@ import Footer from "@/components/Footer";
 
 export type FormItems = {
   name: string;
+  surname: string;
   email: string;
   phone: string;
   message: string;
@@ -27,10 +28,12 @@ export type FormItems = {
   carCondition?: string;
   carModel?: string;
   acceptTerms: boolean; // Added acceptTerms field
+  contactMethod: string; // Add this line
 };
 
 const initialValues: FormItems = {
   name: "",
+  surname: "",
   email: "",
   phone: "",
   message: "",
@@ -39,6 +42,7 @@ const initialValues: FormItems = {
   carCondition: "",
   carModel: "",
   acceptTerms: false, // Initial value for acceptTerms
+  contactMethod: "", // Initial value for contactMethod
 };
 
 export default function Home() {
@@ -59,7 +63,7 @@ export default function Home() {
   } = useMultiplestepForm(6); // Updated step count
 
   const updateForm = useCallback((fieldToUpdate: Partial<FormItems>) => {
-    const { name, email, phone, message, acceptTerms } = fieldToUpdate;
+    const { name, surname, email, phone, message, acceptTerms, contactMethod  } = fieldToUpdate;
 
     if (name && name.trim().length < 3) {
       setErrors((prevState) => ({
@@ -75,6 +79,23 @@ export default function Home() {
       setErrors((prevState) => ({
         ...prevState,
         name: "",
+      }));
+    }
+
+    if (surname && surname.trim().length < 3) {
+      setErrors((prevState) => ({
+        ...prevState,
+        surname: "Numele să fie minim 3 caractere",
+      }));
+    } else if (surname && surname.trim().length > 30) {
+      setErrors((prevState) => ({
+        ...prevState,
+        surname: "Numele să fie maxim 30 de caractere",
+      }));
+    } else {
+      setErrors((prevState) => ({
+        ...prevState,
+        surname: "",
       }));
     }
 
@@ -125,6 +146,10 @@ export default function Home() {
           ...prevState,
         }));
       }
+    }
+
+    if (contactMethod !== undefined) {
+      setFormData((prev) => ({ ...prev, contactMethod }));
     }
 
     setFormData((prev) => ({ ...prev, ...fieldToUpdate }));
@@ -206,7 +231,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[640px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-[95vh] xs:max-md:h-[95vh]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5  ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[700px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-full md:h-[800px]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5  ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar
@@ -276,7 +301,7 @@ export default function Home() {
                   <FinalStep key="step6" {...formData} goTo={goTo} />
                 )}
               </AnimatePresence>
-              <div className="flex w-full items-center justify-between px-1">
+              <div className={`${currentStepIndex === 4 ? "mt-8" : ""} flex w-full items-center justify-between px-1`}>
                 <div>
                   <Button
                     onClick={previousStep}

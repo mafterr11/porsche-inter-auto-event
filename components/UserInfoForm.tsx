@@ -3,6 +3,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FormItems } from "../app/page";
 import { Textarea } from "./ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 type StepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
@@ -11,10 +18,11 @@ type StepProps = FormItems & {
 
 const UserInfoForm = ({
   name,
+  surname,
   email,
   phone,
   message,
-  acceptTerms, // Added acceptTerms prop
+  acceptTerms,
   errors,
   updateForm,
 }: StepProps) => {
@@ -23,7 +31,7 @@ const UserInfoForm = ({
       title="Informații personale"
       description="Vă rugăm să introduceți numele, adresa de email și numărul de telefon."
     >
-      <div className="flex w-full flex-col gap-5 xs:max-md:space-y-4 text-neutral-800">
+      <div className="flex w-full flex-col gap-5 text-neutral-800 xs:max-md:space-y-4">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Nume</Label>
           <Input
@@ -38,6 +46,23 @@ const UserInfoForm = ({
             required
           />
           {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
+        </div>
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="surname">Prenume</Label>
+          <Input
+            autoFocus
+            type="text"
+            name="surname"
+            id="surname"
+            placeholder="Completați cu numele complet"
+            value={surname}
+            onChange={(e) => updateForm({ surname: e.target.value })}
+            className="w-full"
+            required
+          />
+          {errors.surname && (
+            <p className="text-sm text-red-500">{errors.surname}</p>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">Email</Label>
@@ -80,6 +105,21 @@ const UserInfoForm = ({
             className="w-full"
             onChange={(e) => updateForm({ message: e.target.value })}
           />
+        </div>
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="contactMethod">Cum doriți să fiți contactat?</Label>
+          <Select
+            onValueChange={(value) => updateForm({ contactMethod: value })}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Alegeți metoda de contact" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Telefon">Telefon</SelectItem>
+              <SelectItem value="Email">Email</SelectItem>
+              <SelectItem value="Whatsapp">Whatsapp</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         <div className="flex items-center gap-2">
           <Input

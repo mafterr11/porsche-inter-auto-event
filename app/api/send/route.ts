@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       from: "Acme <onboarding@resend.dev>",
       to: ["mafterr11@gmail.com"],
       subject: "PIA - Solicitare Nouă",
-      react: EmailTemplate(formData), // pass the entire formData object to the template
+      text: EmailTemplate(formData), // pass the entire formData object to the template
     });
 
     return NextResponse.json(data);
