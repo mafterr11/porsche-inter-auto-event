@@ -199,6 +199,18 @@ export default function Home() {
       }));
       return;
     }
+    
+    if (currentStepIndex === 4 && !formData.contactMethod) {
+      toast({
+        title: "Selectați o metodă de contact",
+        description: "Vă rugăm să selectați cum vă vom contacta",
+        variant: "destructive",
+      });
+      setErrors((prevState) => ({
+        ...prevState,
+      }));
+      return;
+    }
 
     if (currentStepIndex === 4 && !formData.acceptTerms) {
       toast({

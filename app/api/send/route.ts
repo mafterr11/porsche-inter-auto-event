@@ -1,5 +1,3 @@
-// app/api/send/route.ts
-
 import EmailTemplate from "@/components/EmailTemplate";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
@@ -14,7 +12,9 @@ export async function POST(request: Request) {
       from: "Acme <onboarding@resend.dev>",
       to: ["mafterr11@gmail.com"],
       subject: "PIA - Solicitare Nouă",
-      text: EmailTemplate(formData), // pass the entire formData object to the template
+      // to: ["pia.event@entigha.com"],
+      // subject: "New Form Submission",
+      text: EmailTemplate(formData), 
     });
 
     return NextResponse.json(data);
