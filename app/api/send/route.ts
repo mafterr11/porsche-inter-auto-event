@@ -12,8 +12,6 @@ export async function POST(request: Request) {
       from: "Acme <onboarding@resend.dev>",
       to: ["mafterr11@gmail.com"],
       subject: "PIA - Solicitare Nouă",
-      // to: ["pia.event@entigha.com"],
-      // subject: "New Form Submission",
       text: EmailTemplate(formData), 
     });
 

@@ -26,8 +26,8 @@ export type FormItems = {
   selectedLocation?: number;
   carCondition?: string;
   carModel?: string;
-  acceptTerms: boolean; 
-  contactMethod: string; 
+  acceptTerms: boolean;
+  contactMethod: string;
 };
 
 const initialValues: FormItems = {
@@ -40,8 +40,8 @@ const initialValues: FormItems = {
   selectedLocation: 1,
   carCondition: "",
   carModel: "",
-  acceptTerms: false, 
-  contactMethod: "", 
+  acceptTerms: false,
+  contactMethod: "",
 };
 
 export default function Home() {
@@ -62,7 +62,8 @@ export default function Home() {
   } = useMultiplestepForm(6);
 
   const updateForm = useCallback((fieldToUpdate: Partial<FormItems>) => {
-    const { name, surname, email, phone, message, acceptTerms, contactMethod  } = fieldToUpdate;
+    const { name, surname, email, phone, message, acceptTerms, contactMethod } =
+      fieldToUpdate;
 
     if (name && name.trim().length < 3) {
       setErrors((prevState) => ({
@@ -133,7 +134,6 @@ export default function Home() {
         message: "",
       }));
     }
-    
 
     if (acceptTerms !== undefined) {
       if (!acceptTerms) {
@@ -198,7 +198,7 @@ export default function Home() {
       }));
       return;
     }
-    
+
     if (currentStepIndex === 4 && !formData.contactMethod) {
       toast({
         title: "Selectați o metodă de contact",
@@ -226,7 +226,8 @@ export default function Home() {
     if (isLastStep) {
       try {
         await handleReCaptchaSubmit();
-        await axios.post("/api/send", formData); 
+        // TODO PRODUCTION enable bellow API
+        // await axios.post("/api/send", formData);
         nextStep();
       } catch (error) {
         console.error("Error submitting form:", error);
@@ -242,7 +243,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[700px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-full md:h-[800px]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5  ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[700px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-full md:h-[800px]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5 ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar
@@ -288,7 +289,7 @@ export default function Home() {
                     key="step3"
                     {...formData}
                     updateForm={updateForm}
-                    nextStep={nextStep} 
+                    nextStep={nextStep}
                   />
                 )}
                 {currentStepIndex === 3 && (
@@ -312,7 +313,9 @@ export default function Home() {
                   <FinalStep key="step6" {...formData} goTo={goTo} />
                 )}
               </AnimatePresence>
-              <div className={`${currentStepIndex === 4 ? "mt-8" : ""} flex w-full items-center justify-between px-1`}>
+              <div
+                className={`${currentStepIndex === 4 ? "mt-8" : ""} flex w-full items-center justify-between px-1`}
+              >
                 <div>
                   <Button
                     onClick={previousStep}
