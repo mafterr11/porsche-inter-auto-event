@@ -28,9 +28,9 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
                 onClick={() => goTo(index)}
                 className={`flex items-center justify-center text-sm font-bold uppercase text-sidebar-pas transition-all duration-500 ease-in-out ${
                   currentStepIndex >= index
-                    ? "scale-[1.08] border-[#717C9B] bg-background-accentClick/60"
-                    : "border-[#969EB7]"
-                } h-10 w-10 rounded-full border-[3px] md:text-base xl:h-12 xl:w-12`}
+                    ? "scale-[1.08] border-[#717C9B] bg-background-accentClick/60 border-2"
+                    : "border-[#969EB7] border"
+                } h-10 w-10 rounded-full  md:text-base xl:h-12 xl:w-12`}
               >
                 <span
                   className={`${
@@ -44,8 +44,8 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
               </button>
               {index < 4 && (
                 <div
-                  className={`block h-1 w-8 transition-all duration-500 ease-in-out md:hidden ${
-                    currentStepIndex > index ? "bg-[#717C9B]" : "bg-[#969EB7]"
+                  className={`block h-[2px] w-8 transition-all duration-500 ease-in-out  md:hidden ${
+                    currentStepIndex > index ? "bg-[#717C9B]  opacity-100" : "bg-[#969EB7] opacity-50" 
                   }`}
                 />
               )}
