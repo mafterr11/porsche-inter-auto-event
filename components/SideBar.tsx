@@ -18,7 +18,7 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
             >
               {index > 0 && (
                 <div
-                  className={`hidden h-[4rem] w-1 transition-all duration-500 ease-in-out md:block ${
+                  className={`hidden h-[4rem] w-[3px] transition-all duration-500 ease-in-out md:block ${
                     currentStepIndex >= index ? "bg-[#717C9B]" : "bg-[#969EB7]"
                   }`}
                 />
