@@ -18,8 +18,10 @@ export default function RootLayout({
       lang="en"
       className="font-futura relative overflow-x-hidden bg-[#384967] text-neutral-200 lg:max-xl:h-full"
     >
-      <body className="relative h-full w-full overflow-x-hidden">
+      <head>
         <GoogleAnalytics />
+      </head>
+      <body className="relative h-full w-full overflow-x-hidden">
         <GoogleCaptchaWrapper>{children}</GoogleCaptchaWrapper>
         <Footer />
         <Toaster />
