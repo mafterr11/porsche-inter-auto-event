@@ -15,7 +15,6 @@ import axios from "axios";
 import Header from "@/components/Header";
 import { useToast } from "@/components/ui/use-toast";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import Footer from "@/components/Footer";
 
 export type FormItems = {
   name: string;
@@ -27,8 +26,8 @@ export type FormItems = {
   selectedLocation?: number;
   carCondition?: string;
   carModel?: string;
-  acceptTerms: boolean; // Added acceptTerms field
-  contactMethod: string; // Add this line
+  acceptTerms: boolean; 
+  contactMethod: string; 
 };
 
 const initialValues: FormItems = {
@@ -41,8 +40,8 @@ const initialValues: FormItems = {
   selectedLocation: 1,
   carCondition: "",
   carModel: "",
-  acceptTerms: false, // Initial value for acceptTerms
-  contactMethod: "", // Initial value for contactMethod
+  acceptTerms: false, 
+  contactMethod: "", 
 };
 
 export default function Home() {
@@ -60,7 +59,7 @@ export default function Home() {
     steps,
     goTo,
     showSuccessMsg,
-  } = useMultiplestepForm(6); // Updated step count
+  } = useMultiplestepForm(6);
 
   const updateForm = useCallback((fieldToUpdate: Partial<FormItems>) => {
     const { name, surname, email, phone, message, acceptTerms, contactMethod  } = fieldToUpdate;
@@ -227,7 +226,7 @@ export default function Home() {
     if (isLastStep) {
       try {
         await handleReCaptchaSubmit();
-        await axios.post("/api/send", formData); // Adjust the API endpoint as necessary
+        await axios.post("/api/send", formData); 
         nextStep();
       } catch (error) {
         console.error("Error submitting form:", error);
@@ -289,7 +288,7 @@ export default function Home() {
                     key="step3"
                     {...formData}
                     updateForm={updateForm}
-                    nextStep={nextStep} // Pass nextStep here
+                    nextStep={nextStep} 
                   />
                 )}
                 {currentStepIndex === 3 && (

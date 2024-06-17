@@ -1,10 +1,10 @@
-// app/layout.tsx
-import './globals.css';
-import { constructMetadata } from '@/lib/utils';
-import Footer from '@/components/Footer';
-import { Toaster } from '@/components/ui/toaster';
-import GoogleCaptchaWrapper from './GoogleCaptchaWrapper';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
+// Project by Alexandru Maftei
+import "./globals.css";
+import { constructMetadata } from "@/lib/utils";
+import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
+import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata = constructMetadata();
 
@@ -16,12 +16,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="font-futura relative overflow-x-hidden bg-[#384967] text-neutral-200 lg:max-xl:h-full"
+      className="relative overflow-x-hidden bg-[#384967] font-futura text-neutral-200 lg:max-xl:h-full"
     >
       <head>
         <GoogleAnalytics />
-                {/* Facebook Pixel */}
-                <script
+        {/* Facebook Pixel */}
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -41,7 +41,7 @@ export default function RootLayout({
           <img
             height="1"
             width="1"
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1322842665014293&ev=PageView&noscript=1"
           />
         </noscript>
