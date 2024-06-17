@@ -10,7 +10,7 @@ export function constructMetadata({
   title = "PIA | Offer Fest",
   description = "Doar în perioada 17-22 iunie, vizitați-ne la Porsche Pipera sau Porsche București Vest pentru a testa gama noastră largă de mașini. Vă așteptăm!",
   image = "/logo.jpg",
-  icons = "/logo.jpg",
+  icons = "/favicon.ico",
 }: {
   title?: string;
   description?: string;
