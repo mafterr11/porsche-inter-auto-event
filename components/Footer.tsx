@@ -7,8 +7,8 @@ const Footer = () => {
     <div className="flex flex-col items-center justify-center py-4 mt-7">
       <div>{currentYear} © Porsche Inter Auto Romania</div>
       <div>
-        <Link href="https://myriad-tech.ro" target={ "_blank"} className="font-bold">
-          Myriad Tech
+        <Link href="https://myriad-tech.ro" target={ "_blank"}>
+          Alexandru Maftei
         </Link>{" "}
         - Toate drepturile rezervate.
       </div>
