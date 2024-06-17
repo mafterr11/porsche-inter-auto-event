@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FormItems } from "@/app/page";
 import FormWrapper from "./FormWrapper";
+import Image from "next/image";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;
@@ -96,9 +97,13 @@ const CarSelectionForm = ({
               className={`flex cursor-pointer flex-col items-center justify-center rounded-md  bg-background-accent p-3 transition-all duration-500 ease-in-out hover:bg-background-accentClick active:scale-[0.95]`}
               onClick={() => handleModelChange(model)}
             >
-              <img
+              <Image
                 src={carModelImages[model]}
+                width={120}
+                height={120}
                 alt={model}
+                priority
+                quality={90}
                 className="mb-2 h-auto w-28"
               />
               <p className="text-center font-bold text-neutral-800">{model}</p>

@@ -47,6 +47,7 @@ const PlanForm = ({ updateForm, marca, nextStep }: stepProps) => {
             <Image
               src={`/${brand.toLowerCase()}.png`}
               alt={`${brand} logo`}
+              priority
               width={100} // Set a fixed width for the images
               height={100} // Set a fixed height for the images
               className={`${brand === "Cupra" ? "p-2" : ""} object-contain`}

@@ -9,6 +9,7 @@ const EmailTemplate = ({
   selectedLocation,
   carCondition,
   carModel,
+  acceptTerms
 }: {
   name: string;
   email: string;
@@ -18,25 +19,29 @@ const EmailTemplate = ({
   selectedLocation: number;
   carCondition: string;
   carModel: string;
+  acceptTerms: boolean;
 }) => {
-  const baseUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://testdrive.pia.ro";
+  const emailContent = `
+Sursa: Event
+Marca: ${marca}
+Dealer: ${selectedLocation}
+Tip: Vanzari
+Model: ${carModel}
+Tip masina: ${carCondition}
+Eveniment: 17-22 Iunie
+Telefon: ${phone}
+Email: ${email}
+Prenume: ${name}
+Nume: ${name}
+Message: ${message}
+Contact Method: Email / Telefon
+Consent: ${acceptTerms ? "Yes" : "No"}
+`;
 
   return (
-    <>
-      Sursa: Event Marca: {marca}
-      Dealer: {selectedLocation}
-      Tip: Vanzari Model: {carModel}
-      Tip masina: {carCondition}
-      Eveniment: 1722 Iunie Telefon: {phone}
-      Email: {email}
-      Prenume: {name}
-      Nume: {name}
-      Message: {message}
-      Contact Method: Phone Consent: Yes
-    </>
+    <pre>
+      {emailContent}
+    </pre>
   );
 };
 
