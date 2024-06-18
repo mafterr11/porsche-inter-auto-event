@@ -102,7 +102,6 @@ const CarSelectionForm = ({
                 width={120}
                 height={120}
                 alt={model}
-                priority
                 quality={90}
                 className="mb-2 h-auto w-28"
               />

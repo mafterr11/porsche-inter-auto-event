@@ -11,7 +11,7 @@ const Footer = () => {
           Myriad Tech
         </Link>
       </div>
-      <div>Proiect personal</div>
+      <div>Toate drepturile rezervate</div>
     </div>
   );
 };
