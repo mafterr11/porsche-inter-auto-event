@@ -243,7 +243,7 @@ export default function Home() {
       <Header />
       {/* Main content */}
       <div
-        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[700px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-full md:h-[800px]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5 ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
+        className={`relative m-1 mx-auto flex w-[40%] max-w-4xl md:h-[700px] md:max-xl:w-[80%] ${currentStepIndex === 4 ? "h-full md:h-[800px] xl:w-[70%]" : currentStepIndex === 0 || currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 5 ? "h-[65vh]" : currentStepIndex === 3 ? "h-[87vh] xs:max-md:h-[85vh]" : "h-[60vh]"} justify-between rounded-lg border border-neutral-700 bg-background p-4 max-md:w-full`}
       >
         {!showSuccessMsg ? (
           <SideBar

@@ -9,7 +9,7 @@ type NavProps = {
 const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
   return (
     <div className={`absolute -top-[2.35rem] left-0 w-full md:relative md:top-0 md:left-0 md:my-auto md:h-[90%] ${currentStepIndex === 4 ? "md:h-[78%]" : ""} md:w-[20%]`}>
-      <nav className="h-full items-center justify-center rounded-t-lg border border-[#717C9B] bg-background-accent py-5 md:rounded-lg md:p-5 xl:flex">
+      <nav className="h-full items-center justify-center rounded-t-lg border border-[#717C9B] bg-background-accent py-5 md:rounded-lg md:p-5 md:flex">
         <ul className="pointer-events-none flex flex-wrap justify-center md:flex-col md:items-center">
           {Array.from({ length: 5 }).map((_, index) => (
             <li
@@ -30,7 +30,7 @@ const SideBar = ({ currentStepIndex, goTo, isLastStep }: NavProps) => {
                   currentStepIndex >= index
                     ? "scale-[1.08] border-[#717C9B] bg-background-accentClick/60"
                     : "border-[#969EB7]"
-                } h-10 w-10 rounded-full md:text-base xl:h-12 xl:w-12`}
+                } h-10 w-10 rounded-full md:text-base md:h-12 md:w-12`}
               >
                 <span
                   className={`${

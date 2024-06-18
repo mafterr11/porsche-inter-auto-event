@@ -43,6 +43,7 @@ const UserInfoForm = ({
             value={name}
             onChange={(e) => updateForm({ name: e.target.value })}
             className="w-full"
+            autoComplete="name"
             required
           />
           {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
@@ -73,6 +74,7 @@ const UserInfoForm = ({
             placeholder="e.g. exemplu@gmail.ro"
             value={email}
             className="w-full"
+            autoComplete="email"
             onChange={(e) => updateForm({ email: e.target.value })}
             required
           />
@@ -89,6 +91,7 @@ const UserInfoForm = ({
             placeholder="e.g. +40 7XX XXX XXX"
             value={phone}
             className="w-full"
+            autoComplete="phone"
             onChange={(e) => updateForm({ phone: e.target.value })}
             required
           />
